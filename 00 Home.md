@@ -4,7 +4,7 @@ tags: [home]
 ---
 
 > [!todo] Next session
-> Start with [[Day 01]]. Claude updates this line after each session.
+> [[Day 02]] · Counting (card 3) · re-solve first: [[0001 Two Sum]], [[1480 Running Sum of 1d Array]]. Claude updates this line after each session.
 
 ```dataview
 TABLE focus, kind

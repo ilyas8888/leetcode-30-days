@@ -18,7 +18,7 @@ tags: [session]
 - Guided: [[0242 Valid Anagram]]
 - Solo: [[0383 Ransom Note]]
 - Bonus: [[0387 First Unique Character in a String]]
-- Re-solve: [[0001 Two Sum]]
+- Re-solve: [[0001 Two Sum]], [[1480 Running Sum of 1d Array]]
 
 ## Routine
 
