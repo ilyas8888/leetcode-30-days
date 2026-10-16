@@ -18,7 +18,7 @@ tags: [session]
 - Guided: [[0049 Group Anagrams]]
 - Solo: [[0347 Top K Frequent Elements]]
 - Bonus: [[0205 Isomorphic Strings]]
-- Re-solve: [[0217 Contains Duplicate]], [[0242 Valid Anagram]]
+- Re-solve: [[0387 First Unique Character in a String]], [[0383 Ransom Note]] ([[0242 Valid Anagram]] in the warm-up)
 
 ## Routine
 

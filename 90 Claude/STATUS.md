@@ -1,7 +1,9 @@
 # STATUS
 
-- Current day: [[Day 01]] done on 2026-10-15. Next: [[Day 02]], counting (card 3): #242 guided, #383 solo, #387 bonus.
-- Due re-solves: #1 Two Sum and #1480 Running Sum on 2026-10-16; #217 Contains Duplicate on 2026-10-18. Mock interviews done: 0 of 4.
-- Next session: run RESET with them one step at a time at the start of every problem (ask R, wait, then E, and so on); they haven't used it on their own yet. Remind them to type **blank** when it happens and **hint** before looking anything up.
-- LeetCode language is now set to Python3.
-- Last updated: 2026-10-15, by Claude after Day 01.
+- Current day: [[Day 02]] done on 2026-10-16. Next: [[Day 03]], grouping and frequency (card 3): #49 guided, #347 solo, #205 bonus.
+- Due re-solves: #242, #383 and #387 on 2026-10-17; #217 on 2026-10-18; #1 and #1480 on 2026-10-19. Mock interviews done: 0 of 4.
+- Day 03 plan: re-solve #387 and #383 first. Cover #242 in the warm-up by writing card 3's `is_anagram` from memory. Before the solo #347, teach `Counter.most_common(k)` and `sorted(..., key=...)` in the Learn block. The bonus is optional: offer it only if they have time left.
+- How to run sessions: lead RESET one step at a time on the guided problem; on solos and re-solves, they write the five RESET comments themselves (this worked on Day 02). Ask for the familiarity rating (1–5) and any blank moment right after each problem, not at the close. Go by their timer, never by message times: they say when 20 minutes have passed or their 2 hours are up, and **stop** ends the session.
+- Watch for: a loop inside a loop labelled O(n log n); O(n) space for letter counts; triggers named as techniques instead of read from the problem. Details in [[weak-spots]].
+- LeetCode language: Python3.
+- Last updated: 2026-10-16, by Claude after Day 02.

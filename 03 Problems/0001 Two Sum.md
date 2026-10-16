@@ -7,11 +7,11 @@ card: "[[Card 02 Hash map lookup]]"
 day: 1
 role: guided
 status: learning
-attempts: 1
-last_result: hints
-familiarity: 2
-last_attempt: 2026-10-15
-next_review: 2026-10-16
+attempts: 2
+last_result: alone
+familiarity:
+last_attempt: 2026-10-16
+next_review: 2026-10-19
 tags: [problem]
 ---
 
@@ -49,3 +49,4 @@ class Solution:
 | Date | Day | Result | Minutes | Familiar (1–5) | Note |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-15 | 1 | hints | 6 | 2 | Guided: card taught first, then written from memory |
+| 2026-10-16 | 2 | alone | 6 | — | Re-solve from memory; `seen[x] = i` right this time |

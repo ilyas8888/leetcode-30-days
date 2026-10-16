@@ -7,11 +7,11 @@ card: "[[Card 11 Prefix sums]]"
 day: 1
 role: bonus
 status: learning
-attempts: 1
-last_result: solution
-familiarity: 3
-last_attempt: 2026-10-15
-next_review: 2026-10-16
+attempts: 2
+last_result: alone
+familiarity:
+last_attempt: 2026-10-16
+next_review: 2026-10-19
 tags: [problem]
 ---
 
@@ -20,7 +20,11 @@ tags: [problem]
 
 ## Trigger
 
+- Each item becomes itself plus everything before it → a running total (prefix sums, [[Card 11 Prefix sums]]).
+
 ## Approach
+
+- Walk from index 1 and add the previous value. By the time the loop reaches i, `nums[i - 1]` has already been updated, so it holds the total of everything before i.
 
 ## Solution
 
@@ -40,9 +44,12 @@ class Solution:
 ## Mistakes and blank moments
 
 - Got stuck and watched a video instead of starting with RESET or asking for a hint.
+- Re-solve example said [1, 2, 3] → [1, 3, 5]; it's [1, 3, 6]. A hand trace showed why: at i = 2, `nums[1]` is already 3, not 2. The list keeps its 3 items; the code changes values in place.
+- Slow solution "for each i, add up everything before it" was labelled O(n log n). A loop inside a loop is O(n²).
 
 ## Attempts
 
 | Date | Day | Result | Minutes | Familiar (1–5) | Note |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-15 | 1 | solution | — | 3 | Bonus; learned from a video |
+| 2026-10-16 | 2 | alone | — | — | Re-solve: all RESET steps written alone; code right, the trace fixed the example |
