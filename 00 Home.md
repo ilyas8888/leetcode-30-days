@@ -16,6 +16,7 @@ LIMIT 1
 
 ## Start here
 
+- [[Learned So Far]]
 - [[30-Day Plan]]
 - [[Session Routine]]
 - [[Rules]]

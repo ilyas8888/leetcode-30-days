@@ -17,7 +17,7 @@ This repository is a 30-day LeetCode practice vault for a junior developer worki
 - `03 Problems/` — 72 problem notes.
 - `04 Sessions/` — 30 day notes.
 - `05 Mocks/` — 4 mock-interview notes.
-- `06 Cheat Sheet/` — one-page summary, filled in on day 30.
+- `06 Cheat Sheet/` — `Learned So Far.md` (everything learned so far, updated after each session) and the one-page cheat sheet, filled in on day 30.
 - `90 Claude/` — your memory (this folder).
 - `99 Templates/` — the note skeletons.
 - `scripts/` — `check_vault.py` (progress + broken-link check) and `new_problem.py`.
@@ -38,6 +38,7 @@ This repository is a 30-day LeetCode practice vault for a junior developer worki
 4. `90 Claude/session-summaries.md` (3 lines at most, newest first).
 5. `90 Claude/weak-spots.md`.
 6. The "Next session" line in `00 Home.md`.
+7. `06 Cheat Sheet/Learned So Far.md`: add the session's new patterns, tools, problems and mistakes.
 
 Then commit with the message `day NN: <focus> (#n, #n)` and push.
 
