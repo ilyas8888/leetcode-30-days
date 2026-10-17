@@ -4,7 +4,7 @@ tags: [home]
 ---
 
 > [!todo] Next session
-> [[Day 03]] · Grouping and frequency (card 3) · re-solve first: [[0387 First Unique Character in a String]], [[0383 Ransom Note]]. Claude updates this line after each session.
+> [[Day 04]] · Two pointers from both ends (card 4) · re-solve first: [[0387 First Unique Character in a String]], [[0383 Ransom Note]]. Claude updates this line after each session.
 
 ```dataview
 TABLE focus, kind

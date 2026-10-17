@@ -18,7 +18,7 @@ tags: [session]
 - Guided: [[0125 Valid Palindrome]]
 - Solo: [[0344 Reverse String]]
 - Bonus: [[0167 Two Sum II - Input Array Is Sorted]]
-- Re-solve: [[0001 Two Sum]], [[0049 Group Anagrams]]
+- Re-solve: [[0387 First Unique Character in a String]], [[0383 Ransom Note]] first, then [[0347 Top K Frequent Elements]] if time is left ([[0049 Group Anagrams]] and [[0217 Contains Duplicate]] in the warm-up)
 
 ## Routine
 

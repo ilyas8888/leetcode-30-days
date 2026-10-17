@@ -7,11 +7,11 @@ card: "[[Card 03 Counting and grouping]]"
 day: 2
 role: guided
 status: learning
-attempts: 1
-last_result: hints
-familiarity:
-last_attempt: 2026-10-16
-next_review: 2026-10-17
+attempts: 2
+last_result: alone
+familiarity: 4
+last_attempt: 2026-10-17
+next_review: 2026-10-20
 tags: [problem]
 ---
 
@@ -60,3 +60,4 @@ class Solution:
 | Date | Day | Result | Minutes | Familiar (1–5) | Note |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-16 | 2 | hints | — | — | Guided: RESET one step at a time with Claude; built from own counting loop |
+| 2026-10-17 | 3 | alone | — | 4 | Re-solve in the warm-up: `return Counter(s) == Counter(t)` from memory |

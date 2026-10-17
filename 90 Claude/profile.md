@@ -6,3 +6,4 @@
 - My main obstacle is going blank at the start of a problem or under pressure. RESET is the fix.
 - Code reviews: the exact line, why, only the fix, one change at a time, and I retype it myself.
 - Message times don't show how long I've worked, because I'm sometimes away. Go by my timer only: I say when I pass 20 minutes or when my 2 hours are up.
+- When I go blank, a skeleton with blanks to fill in gets me moving (RESET's T step).
