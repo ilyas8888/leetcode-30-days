@@ -6,12 +6,12 @@ url: https://leetcode.com/problems/contains-duplicate/
 card: "[[Card 02 Hash map lookup]]"
 day: 1
 role: solo
-status: learning
-attempts: 1
+status: done
+attempts: 2
 last_result: alone
-familiarity: 5
-last_attempt: 2026-10-15
-next_review: 2026-10-18
+familiarity: 4
+last_attempt: 2026-10-18
+next_review: 2026-10-25
 tags: [problem]
 ---
 
@@ -30,10 +30,10 @@ tags: [problem]
 class Solution:
     def containsDuplicate(self, nums: list[int]) -> bool:
         seen = set()
-        for i in nums:
-            if i in seen:
+        for x in nums:
+            if x in seen:
                 return True
-            seen.add(i)
+            seen.add(x)
         return False
 ```
 
@@ -46,9 +46,11 @@ class Solution:
 
 - The first version used a dict and stored an index it never read. When you only need "seen or not", use a set.
 - Used `i` for values. `i` usually means an index, so `x` or `num` reads better.
+- Day 4 warm-up: used a dict as a set again (`count = {}`, `count[x] = x`, plus an unused `i` from `enumerate`) and wrote the trigger as "count". Nothing is counted here: the trigger is "seen before", so the tool is a set named `seen`.
 
 ## Attempts
 
 | Date | Day | Result | Minutes | Familiar (1–5) | Note |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-15 | 1 | alone | 6 | 5 | Solo; rewrote it with a set afterwards |
+| 2026-10-18 | 4 | alone | — | 4 | Warm-up re-solve: worked, but with a dict where a set belongs |

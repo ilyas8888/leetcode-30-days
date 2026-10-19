@@ -7,11 +7,11 @@ card: "[[Card 03 Counting and grouping]]"
 day: 2
 role: bonus
 status: learning
-attempts: 2
-last_result: hints
-familiarity: 2
-last_attempt: 2026-10-17
-next_review: 2026-10-18
+attempts: 3
+last_result: alone
+familiarity: 4
+last_attempt: 2026-10-19
+next_review: 2026-10-22
 tags: [problem]
 ---
 
@@ -50,6 +50,7 @@ class Solution:
 - Day 2: stuck at T after naming the counting trigger; typed "stuck" instead of looking it up. Stopped there and read the solution.
 - Day 3: the slow solution was labelled O(n²) correctly. Wrote `Counter[s]` (brackets read, parentheses build) and looped over the Counter, which gives letters, not counts or positions.
 - Day 3: went blank at T; the skeleton with blanks got things moving. Tested `== 0` first and fixed it to `== 1` alone: a letter from the string always appears at least once.
+- Day 4: correct on the first try, with time and space both right; the three Day 3 mistakes were gone. The RESET comments stopped after the example: no slow solution, no trigger.
 
 ## Attempts
 
@@ -57,3 +58,4 @@ class Solution:
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-16 | 2 | solution | — | — | Bonus: RESET up to the trigger, hint 1, then saw the solution |
 | 2026-10-17 | 3 | hints | — | 2 | Re-solve: RESET alone; hint 1, then the skeleton after a blank |
+| 2026-10-19 | 4 | alone | — | 4 | Re-solve first in the session: first solve without help |

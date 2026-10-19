@@ -18,7 +18,7 @@ tags: [session]
 - Guided: [[0283 Move Zeroes]]
 - Solo: [[0026 Remove Duplicates from Sorted Array]]
 - Bonus: [[0088 Merge Sorted Array]]
-- Re-solve: [[0125 Valid Palindrome]], [[0383 Ransom Note]]
+- Re-solve: [[0344 Reverse String]] (the card's way), [[0347 Top K Frequent Elements]] and [[0049 Group Anagrams]] first, before the new card. Card 4 from memory in the warm-up covers [[0125 Valid Palindrome]]. [[0001 Two Sum]], [[1480 Running Sum of 1d Array]] and [[0242 Valid Anagram]] if time is left
 
 ## Routine
 

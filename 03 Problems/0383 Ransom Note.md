@@ -7,11 +7,11 @@ card: "[[Card 03 Counting and grouping]]"
 day: 2
 role: solo
 status: learning
-attempts: 2
-last_result: hints
-familiarity: 2
-last_attempt: 2026-10-17
-next_review: 2026-10-18
+attempts: 3
+last_result: alone
+familiarity: 4
+last_attempt: 2026-10-19
+next_review: 2026-10-22
 tags: [problem]
 ---
 
@@ -52,6 +52,7 @@ class Solution:
 - Day 2: wrote the code after getting the approach in words; used Counter's "missing letter counts as 0". The second `if count_magazine[ch] > 0` wasn't needed.
 - Day 3: forgot the approach. Hint 1 (walk the note through the magazine's counts) led to Way 2, a new solution.
 - Optional polish for Way 2: loop over `count_n` so each different letter is checked once.
+- Day 4: Way 2 alone, with every RESET line. Wrote time O(n): with two inputs of different sizes it's O(m + n), because `Counter(magazine)` reads every magazine letter.
 
 ## Attempts
 
@@ -59,3 +60,4 @@ class Solution:
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-16 | 2 | hints | — | — | Solo: RESET comments up to the trigger, then the approach in words |
 | 2026-10-17 | 3 | hints | — | 2 | Re-solve: forgot the approach; hint 1, then a new solution |
+| 2026-10-19 | 4 | alone | — | 4 | Re-solve: Way 2 alone, every RESET line written; time fixed to O(m + n) |

@@ -4,7 +4,7 @@ tags: [home]
 ---
 
 > [!todo] Next session
-> [[Day 04]] · Two pointers from both ends (card 4) · re-solve first: [[0387 First Unique Character in a String]], [[0383 Ransom Note]]. Claude updates this line after each session.
+> [[Day 05]] · Read/write pointer (card 5) · re-solve first: [[0344 Reverse String]], [[0347 Top K Frequent Elements]], [[0049 Group Anagrams]]. Claude updates this line after each session.
 
 ```dataview
 TABLE focus, kind

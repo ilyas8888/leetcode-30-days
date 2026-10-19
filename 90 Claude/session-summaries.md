@@ -4,6 +4,8 @@ Newest first. One line each, format: `Day NN — focus — what clicked / what t
 
 <!-- Example: Day 01 — hash map lookup — solved Two Sum alone; revisit when to store index vs value -->
 
+Day 04 — two pointers from both ends — re-solves first: #387 and #383 alone (familiarity 2 → 4), #217 alone (done), #49 regressed (word as the key); card 4 typed 3 times; #125 guided with a 6-turn trace; #344 after hint 1 (mirror swap, stop at the middle); #347 misread as "has duplicates", fixed after hint 1 / revisit: triggers come from the problem's words, one partner per position = one loop, a Counter of numbers = O(n) space
+
 Day 03 — grouping and frequency — anagram one-liner from memory; #387 re-solve needed hint 1 and the skeleton after a blank; built #49 in one line; #347 with most_common after an index error; #383 re-solved a new way after hint 1; #205 bonus unfinished / revisit: hidden loops in Big-O, positions vs values vs keys, multi-step solutions fade after a day
 
 Day 02 — counting — #1 from memory (~6 min); built #242 from own counting loop; #383 after the approach in words; #1480 re-solved with every RESET step alone; #387 stopped at T, saw solution / revisit: loop in a loop = O(n²), letter counts = O(1) space, triggers come from the problem
