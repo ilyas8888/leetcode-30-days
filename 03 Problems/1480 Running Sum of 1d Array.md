@@ -6,12 +6,12 @@ url: https://leetcode.com/problems/running-sum-of-1d-array/
 card: "[[Card 11 Prefix sums]]"
 day: 1
 role: bonus
-status: learning
-attempts: 2
+status: done
+attempts: 3
 last_result: alone
-familiarity:
-last_attempt: 2026-10-16
-next_review: 2026-10-19
+familiarity: 5
+last_attempt: 2026-10-20
+next_review: 2026-10-27
 tags: [problem]
 ---
 
@@ -53,3 +53,4 @@ class Solution:
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-15 | 1 | solution | — | 3 | Bonus; learned from a video |
 | 2026-10-16 | 2 | alone | — | — | Re-solve: all RESET steps written alone; code right, the trace fixed the example |
+| 2026-10-20 | 5 | alone | — | 5 | Re-solve at the end of the session; time and space right |

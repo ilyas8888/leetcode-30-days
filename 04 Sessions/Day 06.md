@@ -18,7 +18,10 @@ tags: [session]
 - Guided: [[0121 Best Time to Buy and Sell Stock]]
 - Solo: [[0643 Maximum Average Subarray I]]
 - Bonus: [[0219 Contains Duplicate II]]
-- Re-solve: [[0283 Move Zeroes]], [[0347 Top K Frequent Elements]]
+- Re-solve:
+  - In the warm-up: card 5 from memory covers [[0283 Move Zeroes]], and [[0347 Top K Frequent Elements]] gets typed from memory like a card.
+  - First, before the new card: [[0026 Remove Duplicates from Sorted Array]] and [[0049 Group Anagrams]].
+  - [[0205 Isomorphic Strings]] if time is left.
 
 ## Routine
 

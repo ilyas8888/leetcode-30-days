@@ -1,25 +1,30 @@
 # STATUS
 
-- Current day: [[Day 04]] done on 2026-10-19 (warm-up on 2026-10-18, the rest on 2026-10-19). Next: [[Day 05]], read/write pointer (card 5): #283 guided, #26 solo, #88 bonus.
-- Due re-solves: #1, #1480 and #49 since 2026-10-19; #242, #205, #125, #344 and #347 on 2026-10-20; #387 and #383 on 2026-10-22. #217 is done (next look on 2026-10-25). Mock interviews done: 0 of 4.
-- Day 05 plan, keeping what worked on Day 04. With re-solves first, #387 and #383 went from familiarity 2 to 4, both solved alone:
-  - Warm-up from memory: card 4 (that's #125's solution) and #347's lines.
-  - Re-solves before any new material: #344 the card's way (`l`, `r`, `while l < r`), #347 (a list, O(n) space), #49 (the label line, then append).
-  - Then card 5, with #283 guided and #26 solo.
-  - If time is left: #1, #1480 and #242, each solved alone before. #205 and the #88 bonus can wait.
-- Pace: on 2026-10-18 they chose to keep the current pace ("no, it's good how it is"). Don't slow the plan unless they ask.
+- Current day: [[Day 05]] done on 2026-10-20. Next: [[Day 06]], running best and fixed windows (card 6): #121 guided, #643 solo, #219 bonus.
+- Due re-solves:
+  - 2026-10-21: #49, #347, #283 and #26.
+  - Since 2026-10-20: #205 (unfinished bonus).
+  - 2026-10-22: #387 and #383.
+  - 2026-10-23: #125 and #344.
+  - Done: #217 (next look 2026-10-25); #1, #1480 and #242 (next look 2026-10-27).
+  - Mock interviews done: 0 of 4.
+- Day 06 plan, still re-solves first:
+  - Warm-up from memory: card 5, which is #283's solution (typings 2 and 3 moved from Day 05), and #347's lines, typed like a card. #347 has slipped three days running; the missing piece is `for num, times in pairs:`.
+  - Re-solves before any new material: #26 (what does `w` mean at the end?) and #49 (no `if`, no set).
+  - Then card 6, with #121 guided and #643 solo. #205 and the #219 bonus if time is left.
+- Pace: keep the current pace (their choice on 2026-10-18).
 - How to run sessions:
-  - Guided problem: lead RESET one step at a time.
-  - Solos and re-solves: they write the RESET comments themselves. Give them the comment skeleton: input / output, example, slow solution, trigger, say it.
-  - When they go blank at T: give the skeleton with blanks, or use Say it → Name it → Check it (taught on Day 04, in [[Learned So Far]]).
-  - Ratings: ask for the familiarity rating (1–5) right after each problem, on a line of its own. Bundled with another ask, it gets skipped.
-  - Traces: show an example row for each kind of branch; with only one example, they copy its label.
+  - New card: give a YouTube video for it (search for a real link, Python preferred), and visualize the steps with an inline stepper showing the array, the pointers and what changes. Both were asked on Day 05; see [[profile]].
+  - Guided problem: lead RESET one step at a time. On Day 05 they tried #283 alone after the video's theory part, drawing it in Excalidraw first; let them, then review.
+  - Solos and re-solves: they write the RESET comments themselves, and the comment skeleton helps. When they ask "why", trace their code on a tiny input (in a stepper if it helps) and give the one fix.
+  - Ratings: ask right after each problem, on a line of its own.
   - Go by their timer, never by message times. **stop** ends the session.
 - Watch for:
-  - triggers named from the solution instead of the problem's words;
-  - nested loops when each position has one partner;
-  - O(k) instead of O(n) space for a Counter of numbers;
-  - #49's `groups` showing up in #347.
+  - `defaultdict` and `enumerate` creeping into #347;
+  - a seen set (#217) creeping into grouping (#49);
+  - in-place problems that still return something (#26: read `->`);
+  - Big-O as the worst case (#1's space) and hidden full passes (#242's `Counter`);
+  - trigger words, especially "sorted".
   - Details in [[weak-spots]].
 - LeetCode language: Python3.
-- Last updated: 2026-10-19, by Claude after Day 04.
+- Last updated: 2026-10-20, by Claude after Day 05.

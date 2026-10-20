@@ -7,11 +7,11 @@ card: "[[Card 04 Two pointers from both ends]]"
 day: 4
 role: guided
 status: learning
-attempts: 1
-last_result: hints
+attempts: 2
+last_result: alone
 familiarity: 4
-last_attempt: 2026-10-19
-next_review: 2026-10-20
+last_attempt: 2026-10-20
+next_review: 2026-10-23
 tags: [problem]
 ---
 
@@ -65,3 +65,4 @@ class Solution:
 | Date | Day | Result | Minutes | Familiar (1–5) | Note |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-19 | 4 | hints | — | 4 | Guided: card written from memory first, then the slow way, the trigger and a 6-turn trace with Claude |
+| 2026-10-20 | 5 | alone | — | 4 | Warm-up: card 4 from memory in LeetCode format, all correct, `()` on `.lower()` included |

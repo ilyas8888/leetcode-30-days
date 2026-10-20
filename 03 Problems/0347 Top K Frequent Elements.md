@@ -7,11 +7,11 @@ card: "[[Card 03 Counting and grouping]]"
 day: 3
 role: solo
 status: learning
-attempts: 2
+attempts: 3
 last_result: hints
-familiarity: 3
-last_attempt: 2026-10-19
-next_review: 2026-10-20
+familiarity: 2
+last_attempt: 2026-10-20
+next_review: 2026-10-21
 tags: [problem]
 ---
 
@@ -32,10 +32,11 @@ tags: [problem]
 class Solution:
     def topKFrequent(self, nums: list[int], k: int) -> list[int]:
         count = Counter(nums)
-        freq = []
-        for i, x in count.most_common(k):
-            freq.append(i)
-        return freq
+        pairs = count.most_common(k)
+        result = []
+        for num, time in pairs:
+            result.append(num)
+        return result
 ```
 
 ## Complexity
@@ -53,6 +54,12 @@ class Solution:
 - Day 4: collected the numbers in a set. Counter keys are already unique, so a list does it and keeps the most-frequent-first order.
 - Day 4: `for i, x in` names (number, count) as if `i` were a position; `for num, times in` says what each one is.
 - Day 4: said O(k) space again. It's O(n): the Counter holds every different number, and numbers aren't capped like letters.
+- Day 5: read the problem right this time, with `Counter` and `most_common(k)` alone. Then:
+  - `defaultdict` came back a third day;
+  - the loop stored whole pairs and called `most_common` inside the loop (a sort every turn);
+  - `freq.append(count.most_common(k))` nested the list (to name a result, use `=`);
+  - `enumerate` was mixed up with pair unpacking.
+- Day 5, their own diagnosis: "I forgot that we can do `for i, x in pairs:`". Name them `num, times`, so they don't look like `enumerate`'s position and value. Typed the full solution once more from memory, correct.
 
 ## Attempts
 
@@ -60,3 +67,4 @@ class Solution:
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-17 | 3 | hints | — | 3 | Solo: asked why the index was out of range, then fixed it alone |
 | 2026-10-19 | 4 | hints | — | 3 | Re-solve: hint 1 fixed the reading; Counter, most_common and the pair loop alone; set changed to a list |
+| 2026-10-20 | 5 | hints | — | 2 | Re-solve: needed hints up to rung 4 (the skeleton) for the pair loop; then typed it again from memory |

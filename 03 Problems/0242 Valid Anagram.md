@@ -6,12 +6,12 @@ url: https://leetcode.com/problems/valid-anagram/
 card: "[[Card 03 Counting and grouping]]"
 day: 2
 role: guided
-status: learning
-attempts: 2
+status: done
+attempts: 3
 last_result: alone
-familiarity: 4
-last_attempt: 2026-10-17
-next_review: 2026-10-20
+familiarity: 5
+last_attempt: 2026-10-20
+next_review: 2026-10-27
 tags: [problem]
 ---
 
@@ -54,6 +54,7 @@ class Solution:
 - Shorter ending: `return count_s == count_t` replaces the `if` and both returns.
 - Card version: `return Counter(s) == Counter(t)`. Use the loop version if the interviewer says "no Counter".
 - Said space is O(n); with only 26 lowercase letters, it's O(1).
+- Day 5: called `Counter(s) == Counter(t)` O(log n). Each Counter reads every letter once, a hidden full pass, so it's O(n).
 
 ## Attempts
 
@@ -61,3 +62,4 @@ class Solution:
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-16 | 2 | hints | — | — | Guided: RESET one step at a time with Claude; built from own counting loop |
 | 2026-10-17 | 3 | alone | — | 4 | Re-solve in the warm-up: `return Counter(s) == Counter(t)` from memory |
+| 2026-10-20 | 5 | alone | — | 5 | Re-solve at the end of the session; time fixed to O(n) |

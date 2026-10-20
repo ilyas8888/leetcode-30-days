@@ -4,7 +4,7 @@ tags: [home]
 ---
 
 > [!todo] Next session
-> [[Day 05]] · Read/write pointer (card 5) · re-solve first: [[0344 Reverse String]], [[0347 Top K Frequent Elements]], [[0049 Group Anagrams]]. Claude updates this line after each session.
+> [[Day 06]] · Running best and fixed windows (card 6) · warm-up: card 5 and [[0347 Top K Frequent Elements]] from memory · re-solve first: [[0026 Remove Duplicates from Sorted Array]], [[0049 Group Anagrams]]. Claude updates this line after each session.
 
 ```dataview
 TABLE focus, kind

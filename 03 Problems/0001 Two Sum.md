@@ -6,12 +6,12 @@ url: https://leetcode.com/problems/two-sum/
 card: "[[Card 02 Hash map lookup]]"
 day: 1
 role: guided
-status: learning
-attempts: 2
+status: done
+attempts: 3
 last_result: alone
-familiarity:
-last_attempt: 2026-10-16
-next_review: 2026-10-19
+familiarity: 4
+last_attempt: 2026-10-20
+next_review: 2026-10-27
 tags: [problem]
 ---
 
@@ -20,7 +20,11 @@ tags: [problem]
 
 ## Trigger
 
+- "Two numbers that add up to target", in an unsorted array → for each x, look for its partner `target - x` among the numbers seen so far: a hash map.
+
 ## Approach
+
+- One pass. For each x, check whether `target - x` is already in `seen` (value → index). If it is, return both positions; if not, store x with its index.
 
 ## Solution
 
@@ -43,6 +47,7 @@ class Solution:
 
 - While learning the card, wrote `seen[i] = x`. The dict must map value → index, because `in seen` only checks keys. Read `seen[x] = i` as "value x was seen at position i."
 - The LeetCode editor was on Python (Python 2); switched to Python3.
+- Day 5: wrote the space as "O(index when target - x in seen)". Big-O is the worst case: the pair can be the last two numbers, so `seen` can hold almost all n numbers → O(n).
 
 ## Attempts
 
@@ -50,3 +55,4 @@ class Solution:
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-15 | 1 | hints | 6 | 2 | Guided: card taught first, then written from memory |
 | 2026-10-16 | 2 | alone | 6 | — | Re-solve from memory; `seen[x] = i` right this time |
+| 2026-10-20 | 5 | alone | — | 4.5 | Re-solve at the end of the session; space fixed to O(n) |

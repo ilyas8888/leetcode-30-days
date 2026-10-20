@@ -9,6 +9,8 @@ tags: [card]
 > [!tip] Use when
 > Keep, remove or move items in place, without a second array. Solves #283.
 
+Video: [Move Zeroes - Leetcode 283 - Python (NeetCode)](https://www.youtube.com/watch?v=aayNRwUN3Do)
+
 ## Card
 
 ```python

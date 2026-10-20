@@ -4,7 +4,7 @@ tags: [review]
 ---
 
 > [!tip] Learned so far
-> Everything from Days 1–4 on one page. Read it before each warm-up. Claude adds to it after every session.
+> Everything from Days 1–5 on one page. Read it before each warm-up. Claude adds to it after every session.
 
 ## Patterns
 
@@ -16,6 +16,9 @@ tags: [review]
 | Top k | "The k most frequent" | `Counter(nums).most_common(k)` | [[Card 03 Counting and grouping]] |
 | Running total | Each item becomes itself plus everything before it | `nums[i] += nums[i - 1]` | [[Card 11 Prefix sums]] |
 | Two pointers from both ends | "Palindrome", "reverse", or a sorted array and a pair | `while l < r:` … `l += 1` and `r -= 1` | [[Card 04 Two pointers from both ends]] |
+| Read/write pointer | "In place" + move, remove or keep some items | `if nums[r] != 0:` then swap `nums[w], nums[r]` and `w += 1` | [[Card 05 Read-write pointer]] |
+
+Videos: card 5, [Move Zeroes - Leetcode 283 - Python (NeetCode)](https://www.youtube.com/watch?v=aayNRwUN3Do).
 
 > [!warning] Four rules that prevent most bugs
 > 1. **Inside the brackets is the key; after `=` is the stored value.** `seen[x] = i` stores position `i` under the number `x`.
@@ -44,6 +47,8 @@ tags: [review]
 | `a, b = b, a` | a swap: both old values are read first, then written | `s[l], s[r] = s[r], s[l]` |
 | `s[::-1]` | a reversed **copy**, n extra slots | `[1, 2, 3][::-1]` gives `[3, 2, 1]` |
 | `n // 2` | division that drops the remainder | `5 // 2` gives `2` |
+| `for r in range(len(nums)):` | positions 0 to n − 1; the loop moves `r` by itself | an `r += 1` inside does nothing |
+| `-> None` / `-> int` | what the function must give back | `-> None`: change in place, return nothing |
 
 Outside LeetCode, add `from collections import Counter, defaultdict` at the top.
 
@@ -62,6 +67,8 @@ Outside LeetCode, add `from collections import Counter, defaultdict` at the top.
 - Space is the number of different keys: letters are capped at 26, so O(1); numbers aren't, so O(n). Returning only k of them doesn't change that: the Counter still holds them all.
 - Two pointers: O(n) time, because every turn moves a pointer inward; O(1) space, just two positions. Cleaning and reversing is also O(n) time but O(n) space, so two pointers save space, not time.
 - Swapping inside the input is O(1) space; building a copy like `s[::-1]` is O(n).
+- Big-O is the worst case: in #1 the pair can be the last two numbers, so `seen` can hold almost all n of them → O(n) space.
+- `Counter(s) == Counter(t)` is O(n), not O(log n): each `Counter` reads every letter once.
 
 ## RESET
 
@@ -96,6 +103,7 @@ The slow solution: if each position has exactly one partner (its mirror, `len(s)
 | Top k (#347) | "Count everything, take the k biggest counts, keep only the numbers." |
 | Running total (#1480) | "Each item becomes itself plus the total before it." |
 | Two pointers from both ends (#125, #344) | "Compare or swap the two ends, then walk inward until they meet." |
+| Read/write pointer (#283, #26) | "Read every item. When you keep one, write it into the next slot and move the write slot forward." |
 
 ## Problems so far
 
@@ -112,6 +120,8 @@ The slow solution: if each position has exactly one partner (its mirror, `len(s)
 | [[1480 Running Sum of 1d Array]] | Running total | Add the previous item, which already holds the total so far |
 | [[0125 Valid Palindrome]] | Two pointers | Skip anything that isn't a letter or digit, compare the two ends ignoring case, walk inward |
 | [[0344 Reverse String]] | Two pointers | Swap the two ends and walk inward; stop at the middle |
+| [[0283 Move Zeroes]] | Read/write pointer | Keep every non-zero: swap it into slot `w`, then `w += 1` |
+| [[0026 Remove Duplicates from Sorted Array]] | Read/write pointer | Keep a number when it differs from the last kept one; return the count |
 
 Live status, with Dataview on:
 
@@ -135,6 +145,8 @@ SORT next_review ASC
 - "Seen or not" calls for a set, not a dict with `count[x] = x` (#217).
 - Counter keys are already unique: collect them in a list, which also keeps the order, not a set (#347).
 - `groups` and `defaultdict` don't belong in top k. That's #49's tool (#347).
+- Grouping needs no `if` and no seen set: `defaultdict(list)` makes the first box itself. Checking "seen before" loses the first word of every group (#49).
+- `most_common(k)` gives (number, count) pairs. Name the result with `=` (`pairs = …`, not `.append`), then unpack each pair on its own: `for num, times in pairs:`, with no `enumerate` (#347).
 
 **Lists and loops**
 - `pairs[count]` uses a count as a position, so Python says "index out of range".
@@ -146,6 +158,9 @@ SORT next_review ASC
 - `s[i] = s[j]` overwrites the letter at `i` before you need it. Swap instead: `s[i], s[j] = s[j], s[i]` (#344).
 - A loop that runs past the middle swaps every pair twice and undoes the work. Stop at `len(s) // 2`, or use `while l < r` (#344).
 - "In place with O(1) extra memory" rules out `s[::-1]`, which builds a copy (#344).
+- A `while` branch that moves no pointer can loop forever: swapping two zeros changed nothing (#283). Every turn must move something.
+- In a `for` loop, `r += 1` does nothing: the loop sets `r` again at the next turn (#283).
+- Know what your pointer means at the end: if `w` sits on the last kept item, the count is `w + 1` (#26).
 
 **Code style**
 - `def f(string = str)` sets a default value. A type hint uses a colon: `def f(string: str)`.
@@ -165,3 +180,6 @@ SORT next_review ASC
 - The trigger is a word in the problem ("palindrome", "reverse", "most frequent"), not how the solution moves ("parallelism").
 - Read the output line twice: #347 asks for "the k most frequent", not "the elements that repeat". If your example fits both readings, make one that doesn't: `[1,2,2,3,3,3]`, k = 1 → [3].
 - In a trace, pick the branch by reading the `if/elif` lines from the top: the first true one runs.
+- Read `->` in the signature before coding: `-> None` means change in place and return nothing (#283, #344); `-> int` means return a number too (#26).
+- "Sorted" is a trigger word on its own: a sorted array and a pair → two pointers (#167).
+- Draw the steps (Excalidraw) before coding: it found the right loop for #26.
