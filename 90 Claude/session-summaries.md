@@ -4,6 +4,8 @@ Newest first. One line each, format: `Day NN — focus — what clicked / what t
 
 <!-- Example: Day 01 — hash map lookup — solved Two Sum alone; revisit when to store index vs value -->
 
+Day 06 — running best and fixed windows — #283 and #347 from memory (#347 alone at last), #49 alone, #26 counted but forgot to write into nums; #121 tried alone with separate min/max (null = −inf), then the card; window positions fixed with a drawing (start at k, drop r − k, carry the total); #643 `best = 0.00` patched with special cases, fixed to `best = avg`; #219 alone / revisit: running best's start value, trace before adding special cases, window positions
+
 Day 05 — read/write pointer — #125 (card 4) from memory, #344 the card's way, #1/#1480/#242 alone (now done); #49 and #347 needed hints again (#347: forgot pair unpacking, third day); #283 tried alone in Excalidraw → time limit, fixed with the card's for/w shape; #26 own design, return fixed to w + 1; asked for a video and a step visual for each new card / revisit: read `->` for the return, what a pointer means at the end, "sorted" as a trigger
 
 Day 04 — two pointers from both ends — re-solves first: #387 and #383 alone (familiarity 2 → 4), #217 alone (done), #49 regressed (word as the key); card 4 typed 3 times; #125 guided with a 6-turn trace; #344 after hint 1 (mirror swap, stop at the middle); #347 misread as "has duplicates", fixed after hint 1 / revisit: triggers come from the problem's words, one partner per position = one loop, a Counter of numbers = O(n) space

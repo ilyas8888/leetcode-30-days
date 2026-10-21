@@ -7,11 +7,11 @@ card: "[[Card 03 Counting and grouping]]"
 day: 3
 role: solo
 status: learning
-attempts: 3
-last_result: hints
-familiarity: 2
-last_attempt: 2026-10-20
-next_review: 2026-10-21
+attempts: 4
+last_result: alone
+familiarity: 4
+last_attempt: 2026-10-21
+next_review: 2026-10-24
 tags: [problem]
 ---
 
@@ -60,6 +60,7 @@ class Solution:
   - `freq.append(count.most_common(k))` nested the list (to name a result, use `=`);
   - `enumerate` was mixed up with pair unpacking.
 - Day 5, their own diagnosis: "I forgot that we can do `for i, x in pairs:`". Name them `num, times`, so they don't look like `enumerate`'s position and value. Typed the full solution once more from memory, correct.
+- Day 6: correct from memory, with no hints. Names to fix: the variable holding the pairs was called `count`, and the loop used `i, x`; `pairs` and `num, times` say what they hold.
 
 ## Attempts
 
@@ -68,3 +69,4 @@ class Solution:
 | 2026-10-17 | 3 | hints | — | 3 | Solo: asked why the index was out of range, then fixed it alone |
 | 2026-10-19 | 4 | hints | — | 3 | Re-solve: hint 1 fixed the reading; Counter, most_common and the pair loop alone; set changed to a list |
 | 2026-10-20 | 5 | hints | — | 2 | Re-solve: needed hints up to rung 4 (the skeleton) for the pair loop; then typed it again from memory |
+| 2026-10-21 | 6 | alone | — | 4 | Warm-up, typed like a card: `for i, x in Counter(nums).most_common(k)`, first solve without hints |

@@ -9,6 +9,10 @@ tags: [card]
 > [!tip] Use when
 > Track the best value so far in one pass, or slide a window of fixed size k. Solves #121; the window is the core of #643.
 
+Videos:
+- [Sliding Window: Best Time to Buy and Sell Stock - Leetcode 121 - Python (NeetCode)](https://www.youtube.com/watch?v=1pkOgXD63yU)
+- [Maximum Sum Subarray of Size K - Sliding Window Pattern Explained (CodeLucky)](https://www.youtube.com/watch?v=-cLczYQt48A)
+
 ## Card
 
 ```python

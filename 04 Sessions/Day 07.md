@@ -15,9 +15,9 @@ tags: [session]
 
 ## Plan
 
-- Rewrite cards 2–6 from memory
+- Rewrite cards 2–6 from memory (card 6 covers [[0121 Best Time to Buy and Sell Stock]])
 - pattern sprint: name the pattern for 10 problem titles
-- re-solves, about 12 minutes each
+- re-solves, about 12 minutes each: [[0026 Remove Duplicates from Sorted Array]], [[0643 Maximum Average Subarray I]], [[0387 First Unique Character in a String]], [[0383 Ransom Note]]; [[0205 Isomorphic Strings]] if time is left
 - one stdin-style problem (card 7)
 - 20-minute think-aloud practice
 

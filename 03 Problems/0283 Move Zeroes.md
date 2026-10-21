@@ -7,11 +7,11 @@ card: "[[Card 05 Read-write pointer]]"
 day: 5
 role: guided
 status: learning
-attempts: 1
-last_result: hints
-familiarity: 4
-last_attempt: 2026-10-20
-next_review: 2026-10-21
+attempts: 2
+last_result: alone
+familiarity: 5
+last_attempt: 2026-10-21
+next_review: 2026-10-24
 tags: [problem]
 ---
 
@@ -58,3 +58,4 @@ class Solution:
 | Date | Day | Result | Minutes | Familiar (1–5) | Note |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-20 | 5 | hints | — | 4 | Tried alone with a drawing first; time limit, then the card's version |
+| 2026-10-21 | 6 | alone | — | 5 | Warm-up: card 5 from memory, drawn in Excalidraw first |

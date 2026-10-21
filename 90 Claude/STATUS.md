@@ -1,30 +1,34 @@
 # STATUS
 
-- Current day: [[Day 05]] done on 2026-10-20. Next: [[Day 06]], running best and fixed windows (card 6): #121 guided, #643 solo, #219 bonus.
+- Current day: [[Day 06]] done on 2026-10-21. Next: [[Day 07]], **review day** for week 1 (no new card).
 - Due re-solves:
-  - 2026-10-21: #49, #347, #283 and #26.
+  - 2026-10-22: #387, #383, #26, #121 and #643.
   - Since 2026-10-20: #205 (unfinished bonus).
-  - 2026-10-22: #387 and #383.
   - 2026-10-23: #125 and #344.
+  - 2026-10-24: #283, #347, #49 and #219.
   - Done: #217 (next look 2026-10-25); #1, #1480 and #242 (next look 2026-10-27).
-  - Mock interviews done: 0 of 4.
-- Day 06 plan, still re-solves first:
-  - Warm-up from memory: card 5, which is #283's solution (typings 2 and 3 moved from Day 05), and #347's lines, typed like a card. #347 has slipped three days running; the missing piece is `for num, times in pairs:`.
-  - Re-solves before any new material: #26 (what does `w` mean at the end?) and #49 (no `if`, no set).
-  - Then card 6, with #121 guided and #643 solo. #205 and the #219 bonus if time is left.
+  - Mock interviews done: 0 of 4. The first is on Day 14.
+- Day 07 plan (review day, see the day note):
+  - Cards 2–6 from memory. Card 6 covers #121, card 4 covers #125, card 5 covers #283.
+  - A 10-title pattern sprint.
+  - Re-solves of about 12 minutes each: #26, #643, #387, #383, then #205 if time is left.
+  - One stdin-style problem (card 7, reading input).
+  - 20 minutes of think-aloud practice.
+  - Keep the resets.
 - Pace: keep the current pace (their choice on 2026-10-18).
 - How to run sessions:
-  - New card: give a YouTube video for it (search for a real link, Python preferred), and visualize the steps with an inline stepper showing the array, the pointers and what changes. Both were asked on Day 05; see [[profile]].
-  - Guided problem: lead RESET one step at a time. On Day 05 they tried #283 alone after the video's theory part, drawing it in Excalidraw first; let them, then review.
-  - Solos and re-solves: they write the RESET comments themselves, and the comment skeleton helps. When they ask "why", trace their code on a tiny input (in a stepper if it helps) and give the one fix.
+  - New card: give a YouTube video (a real link, Python preferred) and a step visual (inline stepper). Both are in [[profile]].
+  - They now watch the theory part of the video, then try the problem alone, drawing it in Excalidraw first (#283, #121). Let them, then review with a trace of a failing input.
+  - Solos and re-solves: they write the RESET comments themselves. When they ask "why", run their code on a tiny failing input and give the one fix.
   - Ratings: ask right after each problem, on a line of its own.
   - Go by their timer, never by message times. **stop** ends the session.
 - Watch for:
-  - `defaultdict` and `enumerate` creeping into #347;
-  - a seen set (#217) creeping into grouping (#49);
-  - in-place problems that still return something (#26: read `->`);
-  - Big-O as the worst case (#1's space) and hidden full passes (#242's `Counter`);
-  - trigger words, especially "sorted".
+  - special-case conditions added to patch a bug (#643);
+  - running best started at 0 when values can be negative;
+  - variables named `max`/`min`;
+  - in-place problems that still return something, or must also write into the array (#26);
+  - window positions (`r` enters, `r - k` leaves);
+  - Big-O space for stored words (#49).
   - Details in [[weak-spots]].
 - LeetCode language: Python3.
-- Last updated: 2026-10-20, by Claude after Day 05.
+- Last updated: 2026-10-21, by Claude after Day 06.

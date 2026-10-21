@@ -4,7 +4,7 @@ tags: [home]
 ---
 
 > [!todo] Next session
-> [[Day 06]] · Running best and fixed windows (card 6) · warm-up: card 5 and [[0347 Top K Frequent Elements]] from memory · re-solve first: [[0026 Remove Duplicates from Sorted Array]], [[0049 Group Anagrams]]. Claude updates this line after each session.
+> [[Day 07]] · Review day: cards 2–6 from memory, 10-title pattern sprint · re-solves: [[0026 Remove Duplicates from Sorted Array]], [[0643 Maximum Average Subarray I]], [[0387 First Unique Character in a String]], [[0383 Ransom Note]]. Claude updates this line after each session.
 
 ```dataview
 TABLE focus, kind
