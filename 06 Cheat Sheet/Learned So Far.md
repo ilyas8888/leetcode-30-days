@@ -4,7 +4,7 @@ tags: [review]
 ---
 
 > [!tip] Learned so far
-> Everything from Days 1–6 on one page. Read it before each warm-up. Claude adds to it after every session.
+> Everything from Days 1–7 on one page. Read it before each warm-up. Claude adds to it after every session.
 
 ## Patterns
 
@@ -19,10 +19,12 @@ tags: [review]
 | Read/write pointer | "In place" + move, remove or keep some items | `if nums[r] != 0:` then swap `nums[w], nums[r]` and `w += 1` | [[Card 05 Read-write pointer]] |
 | Running best | "Max profit", buy before you sell, the best result in one pass | `lowest = min(lowest, p)` then `best = max(best, p - lowest)` | [[Card 06 Running best and fixed windows]] |
 | Fixed window | "k items in a row", "every subarray of length k" | `window += nums[r] - nums[r - k]` | [[Card 06 Running best and fixed windows]] |
+| Reading input | HackerRank-style tests: no parameters, you read the input and print the answer | `nums = list(map(int, input().split()))` | [[Card 07 Reading input]] |
 
 Videos:
 - Card 5: [Move Zeroes - Leetcode 283 - Python (NeetCode)](https://www.youtube.com/watch?v=aayNRwUN3Do)
 - Card 6: [Sliding Window: Best Time to Buy and Sell Stock - Leetcode 121 - Python (NeetCode)](https://www.youtube.com/watch?v=1pkOgXD63yU) and [Maximum Sum Subarray of Size K (CodeLucky)](https://www.youtube.com/watch?v=-cLczYQt48A)
+- Card 7: [Input a List using split() Method in Python (Neso Academy)](https://www.youtube.com/watch?v=paVL-trB1KA)
 
 > [!warning] Four rules that prevent most bugs
 > 1. **Inside the brackets is the key; after `=` is the stored value.** `seen[x] = i` stores position `i` under the number `x`.
@@ -56,6 +58,10 @@ Videos:
 | `float("inf")` | infinity, bigger than any number | `min(float("inf"), 7)` gives `7` |
 | `min(a, b)` / `max(a, b)` | the smaller / the bigger of two values | `max(best, p - lowest)` |
 | `sum(nums[:k])` | the total of the first k items (`nums[:k]` alone is a list) | `sum([2, 1, 5])` gives `8` |
+| `input()` / `sys.stdin.read()` | one line of input / all of it, as text | `input().split()` gives `['3', '1', '4']` |
+| `map(int, pieces)` + `list(...)` | every piece turned into a number, collected in a list | `list(map(int, ['3', '1']))` gives `[3, 1]` |
+| `sorted(ar)` / `ar.sort()` | a new sorted list / sorts `ar` itself | store it: `ar = sorted(ar)` |
+| `print(answer)` | the answer for the judge, who reads everything you print | no extra words, no `input("message")` |
 
 Outside LeetCode, add `from collections import Counter, defaultdict` at the top.
 
@@ -78,6 +84,8 @@ Outside LeetCode, add `from collections import Counter, defaultdict` at the top.
 - `Counter(s) == Counter(t)` is O(n), not O(log n): each `Counter` reads every letter once.
 - Sliding a window costs O(1) per step, so the whole pass is O(n). Adding up every window from scratch would be O(n · k).
 - Space is what you store: #49's dict stores every word, so O(n · k), even though words are made of only 26 letters.
+- No sort, no log n: #387 is two passes, so O(n).
+- A `Counter` built inside a loop is a full pass on every turn, so O(n²) (#389). Build it once, before the loop.
 
 ## RESET
 
@@ -115,6 +123,7 @@ The slow solution: if each position has exactly one partner (its mirror, `len(s)
 | Read/write pointer (#283, #26) | "Read every item. When you keep one, write it into the next slot and move the write slot forward." |
 | Running best (#121) | "Walk once, remember the cheapest so far, and ask every day what selling today would earn." |
 | Fixed window (#643) | "Add the new item, drop the one that fell out, and keep the best window you've seen." |
+| Reading input (card 7) | "Read everything, split it, turn the pieces into numbers, print only the answer." |
 
 ## Problems so far
 
@@ -136,6 +145,8 @@ The slow solution: if each position has exactly one partner (its mirror, `len(s)
 | [[0121 Best Time to Buy and Sell Stock]] | Running best | Cheapest so far, and the best "sell today" profit |
 | [[0643 Maximum Average Subarray I]] | Fixed window | Slide the k-window, keep the best, start `best` from the first window |
 | [[0219 Contains Duplicate II]] | Hash map / window | Last position of each value within k, or a set of the last k numbers |
+| [Sales by Match (HackerRank)](https://www.hackerrank.com/challenges/sock-merchant/problem) | Reading input + counting | Count each color; each one gives `count // 2` pairs |
+| [#389 Find the Difference](https://leetcode.com/problems/find-the-difference/) | Counting | "Shuffled" plus one extra letter: the letter whose count in `t` is bigger |
 
 Live status, with Dataview on:
 
@@ -175,6 +186,9 @@ SORT next_review ASC
 - A `while` branch that moves no pointer can loop forever: swapping two zeros changed nothing (#283). Every turn must move something.
 - In a `for` loop, `r += 1` does nothing: the loop sets `r` again at the next turn (#283).
 - Know what your pointer means at the end: if `w` sits on the last kept item, the count is `w + 1` (#26).
+- If you move the pointers yourself, use `while`. A `for` moves its own variable, so an `r += 1` inside it does nothing (#283, #121, #26, Sales by Match).
+- `return` goes after the loop. Inside it, it runs at the end of the first turn (Sales by Match).
+- `sorted(x)` returns a new list. Store it (`ar = sorted(ar)`), or the loop still reads the unsorted one.
 - In a window, the number coming in is at `r` and the one leaving is at `r - k`. The loop starts at `r = k`, the first number not yet in the window (#643).
 - `window += …` carries over: each step starts from the last window, not from the first one.
 - Buy before you sell: the lowest and the highest price on their own can be in the wrong order ([2, 9, 1]). Use the cheapest price **up to** today (#121).
@@ -201,7 +215,9 @@ SORT next_review ASC
 - Read `->` in the signature before coding: `-> None` means change in place and return nothing (#283, #344); `-> int` means return a number too (#26).
 - "Sorted" is a trigger word on its own: a sorted array and a pair → two pointers (#167).
 - Draw the steps (Excalidraw) before coding: it found the right loop for #26.
-- A running best starts from the first real value when results can be negative (#643's averages). 0 only works when the answer can't go below 0 (#121's profit).
+- A running best starts from the first real value when results can be negative (#643's averages). 0 only works when the answer can't go below 0 (#121's profit). And it has to be the same kind of value: the first window's sum, not `nums[0]` (Day 7).
+- In a test, call `input()` with no message, print only the answer, and import `Counter` yourself outside LeetCode.
+- Think-aloud order: restate the problem, give an example, ask about edge cases, say the brute force, name the pattern, give your plan, code, trace your example, then the time and space. Phrases: [[Interview Phrases]].
 - Before adding special-case `if`s, trace the failing input. On #643, the special cases were patching `best = 0.00`, and one of them was wrong.
 - "Null" from LeetCode can mean infinity leaked into the answer: `0 - float("inf")` (#121).
 - In-place problems can also ask for a number back, and LeetCode checks both: #26 wants the count **and** the unique numbers written into the first slots.

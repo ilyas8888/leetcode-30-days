@@ -6,12 +6,12 @@ url: https://leetcode.com/problems/first-unique-character-in-a-string/
 card: "[[Card 03 Counting and grouping]]"
 day: 2
 role: bonus
-status: learning
-attempts: 3
+status: done
+attempts: 4
 last_result: alone
-familiarity: 4
-last_attempt: 2026-10-19
-next_review: 2026-10-22
+familiarity: 5
+last_attempt: 2026-10-22
+next_review: 2026-10-29
 tags: [problem]
 ---
 
@@ -51,6 +51,7 @@ class Solution:
 - Day 3: the slow solution was labelled O(n²) correctly. Wrote `Counter[s]` (brackets read, parentheses build) and looped over the Counter, which gives letters, not counts or positions.
 - Day 3: went blank at T; the skeleton with blanks got things moving. Tested `== 0` first and fixed it to `== 1` alone: a letter from the string always appears at least once.
 - Day 4: correct on the first try, with time and space both right; the three Day 3 mistakes were gone. The RESET comments stopped after the example: no slow solution, no trigger.
+- Day 7: correct and alone again. Wrote time O(n log n): there's no sort, just two passes (`Counter` and the loop), so O(n).
 
 ## Attempts
 
@@ -59,3 +60,4 @@ class Solution:
 | 2026-10-16 | 2 | solution | — | — | Bonus: RESET up to the trigger, hint 1, then saw the solution |
 | 2026-10-17 | 3 | hints | — | 2 | Re-solve: RESET alone; hint 1, then the skeleton after a blank |
 | 2026-10-19 | 4 | alone | — | 4 | Re-solve first in the session: first solve without help |
+| 2026-10-22 | 7 | alone | — | 5 | Review day re-solve in a few minutes; time fixed to O(n) |

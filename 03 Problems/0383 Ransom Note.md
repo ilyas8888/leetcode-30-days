@@ -6,12 +6,12 @@ url: https://leetcode.com/problems/ransom-note/
 card: "[[Card 03 Counting and grouping]]"
 day: 2
 role: solo
-status: learning
-attempts: 3
+status: done
+attempts: 4
 last_result: alone
 familiarity: 4
-last_attempt: 2026-10-19
-next_review: 2026-10-22
+last_attempt: 2026-10-22
+next_review: 2026-10-29
 tags: [problem]
 ---
 
@@ -33,16 +33,16 @@ tags: [problem]
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
         count_m = Counter(magazine)
-        count_n = Counter(ransomNote)
         for ch in ransomNote:
-            if count_m[ch] < count_n[ch]:
+            if count_m[ch] < 1:
                 return False
+            count_m[ch] -= 1
         return True
 ```
 
 ## Complexity
 
-- Time: O(m + n). One pass to count each string.
+- Time: O(m + n). One pass to count the magazine, one pass over the note.
 - Space: O(1). Each counter holds at most 26 letters.
 
 ## Mistakes and blank moments
@@ -53,6 +53,7 @@ class Solution:
 - Day 3: forgot the approach. Hint 1 (walk the note through the magazine's counts) led to Way 2, a new solution.
 - Optional polish for Way 2: loop over `count_n` so each different letter is checked once.
 - Day 4: Way 2 alone, with every RESET line. Wrote time O(n): with two inputs of different sizes it's O(m + n), because `Counter(magazine)` reads every magazine letter.
+- Day 7: Way 1 alone (the solution above). It left an unused `count_n` and an unused `i` from `enumerate`, and wrote time O(n) again: it's O(m + n).
 
 ## Attempts
 
@@ -61,3 +62,4 @@ class Solution:
 | 2026-10-16 | 2 | hints | — | — | Solo: RESET comments up to the trigger, then the approach in words |
 | 2026-10-17 | 3 | hints | — | 2 | Re-solve: forgot the approach; hint 1, then a new solution |
 | 2026-10-19 | 4 | alone | — | 4 | Re-solve: Way 2 alone, every RESET line written; time fixed to O(m + n) |
+| 2026-10-22 | 7 | alone | — | 4 | Review day: Way 1 alone in about 12 minutes; time fixed to O(m + n) again |

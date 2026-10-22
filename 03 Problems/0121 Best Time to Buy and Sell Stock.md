@@ -7,11 +7,11 @@ card: "[[Card 06 Running best and fixed windows]]"
 day: 6
 role: guided
 status: learning
-attempts: 1
-last_result: hints
-familiarity: 3
-last_attempt: 2026-10-21
-next_review: 2026-10-22
+attempts: 2
+last_result: alone
+familiarity: 5
+last_attempt: 2026-10-22
+next_review: 2026-10-25
 tags: [problem]
 ---
 
@@ -58,3 +58,4 @@ class Solution:
 | Date | Day | Result | Minutes | Familiar (1–5) | Note |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-21 | 6 | hints | — | 3 | Tried alone first (min and max tracked separately), then the card's version |
+| 2026-10-22 | 7 | alone | — | 5 | Review day: card 6's running best from memory, correct |

@@ -18,7 +18,10 @@ tags: [session]
 - Guided: [[0003 Longest Substring Without Repeating Characters]]
 - Solo: [[0209 Minimum Size Subarray Sum]]
 - Bonus: [[1004 Max Consecutive Ones III]]
-- Re-solve: [[0121 Best Time to Buy and Sell Stock]], [[0026 Remove Duplicates from Sorted Array]]
+- Re-solve:
+  - In the warm-up: card 4 from memory covers [[0125 Valid Palindrome]], plus [[0344 Reverse String]] the card's way.
+  - First, before the new card: [[0026 Remove Duplicates from Sorted Array]] and [[0643 Maximum Average Subarray I]].
+  - [[0205 Isomorphic Strings]] if time is left.
 
 ## Routine
 

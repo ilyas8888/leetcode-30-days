@@ -4,7 +4,7 @@ tags: [home]
 ---
 
 > [!todo] Next session
-> [[Day 07]] · Review day: cards 2–6 from memory, 10-title pattern sprint · re-solves: [[0026 Remove Duplicates from Sorted Array]], [[0643 Maximum Average Subarray I]], [[0387 First Unique Character in a String]], [[0383 Ransom Note]]. Claude updates this line after each session.
+> [[Day 08]] · Variable sliding window (card 8) · warm-up: card 4 and [[0344 Reverse String]] from memory · re-solve first: [[0026 Remove Duplicates from Sorted Array]], [[0643 Maximum Average Subarray I]]. Claude updates this line after each session.
 
 ```dataview
 TABLE focus, kind

@@ -9,6 +9,8 @@ tags: [card]
 > [!tip] Use when
 > For HackerRank-style tests, where you read the input yourself and print the answer.
 
+Video: [Input a List using split() Method in Python (Neso Academy)](https://www.youtube.com/watch?v=paVL-trB1KA)
+
 ## Card
 
 ```python
@@ -30,7 +32,8 @@ On LeetCode, put the function inside `class Solution` and add `self` as the firs
 
 ## Problems
 
-- None yet — this card supports the others.
+- [Sales by Match (HackerRank)](https://www.hackerrank.com/challenges/sock-merchant/problem): read n and the colors, count each color, and add up `count // 2`. Day 7 practice, run locally with `input()`.
+- In a test, call `input()` with no message: the judge reads everything you print. Outside LeetCode, add `from collections import Counter`.
 
 ```dataview
 TABLE status, last_result, familiarity
