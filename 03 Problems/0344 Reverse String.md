@@ -6,12 +6,12 @@ url: https://leetcode.com/problems/reverse-string/
 card: "[[Card 04 Two pointers from both ends]]"
 day: 4
 role: solo
-status: learning
-attempts: 2
+status: done
+attempts: 3
 last_result: alone
-familiarity: 4
-last_attempt: 2026-10-20
-next_review: 2026-10-23
+familiarity: 5
+last_attempt: 2026-10-23
+next_review: 2026-10-30
 tags: [problem]
 ---
 
@@ -62,3 +62,4 @@ class Solution:
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-19 | 4 | hints | — | 3 | Solo: hint 1 (which positions swap first?), then the mirror index and the swap; fixed the loop's end |
 | 2026-10-20 | 5 | alone | — | 4 | Re-solve the card's way (`l`, `r`, `while l < r`); index version kept as a comment |
+| 2026-10-23 | 8 | alone | — | 5 | Warm-up: the card's way from memory, no `return s` this time |

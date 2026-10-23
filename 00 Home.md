@@ -4,7 +4,7 @@ tags: [home]
 ---
 
 > [!todo] Next session
-> [[Day 08]] · Variable sliding window (card 8) · warm-up: card 4 and [[0344 Reverse String]] from memory · re-solve first: [[0026 Remove Duplicates from Sorted Array]], [[0643 Maximum Average Subarray I]]. Claude updates this line after each session.
+> [[Day 09]] · Stack (card 9) · warm-up: cards 8 and 5 from memory · re-solve first: [[0209 Minimum Size Subarray Sum]], [[1004 Max Consecutive Ones III]]. Claude updates this line after each session.
 
 ```dataview
 TABLE focus, kind

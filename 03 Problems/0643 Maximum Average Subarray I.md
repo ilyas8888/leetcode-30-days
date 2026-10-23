@@ -7,11 +7,11 @@ card: "[[Card 06 Running best and fixed windows]]"
 day: 6
 role: solo
 status: learning
-attempts: 2
-last_result: hints
-familiarity: 4
-last_attempt: 2026-10-22
-next_review: 2026-10-23
+attempts: 3
+last_result: alone
+familiarity: 5
+last_attempt: 2026-10-23
+next_review: 2026-10-26
 tags: [problem]
 ---
 
@@ -59,6 +59,7 @@ class Solution:
   - When `k == len(nums)`, the loop never runs: [1, 2], k = 2 gave 0.5 instead of 1.5.
   - A big first number beat every window: [10, -5, -5, 1], k = 2 gave 5.0 instead of 2.5.
   - Fix: `best = window`.
+- Day 8: alone, with `best = window`. Said space O(k): fair only because `nums[:k]` makes a copy; the window itself is one number.
 
 ## Attempts
 
@@ -66,3 +67,4 @@ class Solution:
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-21 | 6 | hints | — | 4 | Solo: window + running best alone; fixed `best = 0.00` to `best = avg` after asking why |
 | 2026-10-22 | 7 | hints | — | 4 | Review day, as card 6's window: `best = nums[0]` fixed to `best = window` after asking why |
+| 2026-10-23 | 8 | alone | — | 5 | Re-solve: alone, `best = window` from the start |

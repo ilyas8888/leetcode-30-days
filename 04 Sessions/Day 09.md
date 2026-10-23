@@ -18,7 +18,10 @@ tags: [session]
 - Guided: [[0020 Valid Parentheses]]
 - Solo: [[0155 Min Stack]]
 - Bonus: [[0150 Evaluate Reverse Polish Notation]]
-- Re-solve: [[0003 Longest Substring Without Repeating Characters]], [[0643 Maximum Average Subarray I]]
+- Re-solve:
+  - In the warm-up: card 8 from memory covers [[0003 Longest Substring Without Repeating Characters]], and card 5 covers [[0283 Move Zeroes]].
+  - First, before the new card: [[0209 Minimum Size Subarray Sum]] and [[1004 Max Consecutive Ones III]].
+  - If time is left: [[0347 Top K Frequent Elements]], [[0049 Group Anagrams]] and [[0219 Contains Duplicate II]] (each solved alone last time), then [[0205 Isomorphic Strings]].
 
 ## Routine
 

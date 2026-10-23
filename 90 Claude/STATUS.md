@@ -1,31 +1,34 @@
 # STATUS
 
-- Current day: [[Day 07]] (review day) done on 2026-10-22. Next: [[Day 08]], variable sliding window (card 8): #3 guided, #209 solo, #1004 bonus.
+- Current day: [[Day 08]] done on 2026-10-23. Next: [[Day 09]], stack (card 9): #20 guided, #155 solo, #150 bonus.
 - Due re-solves:
-  - 2026-10-23: #125, #344, #26 and #643.
+  - 2026-10-24: #3, #209, #1004, #283, #347, #49 and #219.
   - Since 2026-10-20: #205 (unfinished bonus).
-  - 2026-10-24: #283, #347, #49 and #219.
   - 2026-10-25: #121.
-  - Done: #217 (next look 2026-10-25); #1, #1480 and #242 (2026-10-27); #387 and #383 (2026-10-29).
+  - 2026-10-26: #26 and #643.
+  - Done: #217 (next look 2026-10-25); #1, #1480 and #242 (2026-10-27); #387 and #383 (2026-10-29); #125 and #344 (2026-10-30).
   - Mock interviews done: 0 of 4. The first is on Day 14.
-- Day 08 plan, still re-solves first:
-  - Warm-up from memory: card 4 (covers #125) and #344 the card's way.
-  - Re-solves before the new card: #26 (say what `l` means at the end) and #643 (`best = window`).
-  - Card 8 with a video and a step visual, then #3 guided and #209 solo. #205 if time is left.
+- Day 09 plan:
+  - Seven re-solves are due, so prioritize. Warm-up: card 8 from memory (covers #3) and card 5 (covers #283).
+  - Re-solves before the new card: #209 and #1004, the window variants that needed the most help.
+  - Card 9 with a video and a step visual, then #20 guided and #155 solo.
+  - If time is left: #347, #49 and #219, each solved alone last time. Then #205.
 - Pace: keep the current pace (their choice on 2026-10-18).
 - How to run sessions:
   - New card: give a YouTube video (a real link, Python preferred) and a step visual (inline stepper). Both are in [[profile]].
-  - They watch the theory part of the video, then try the problem alone, drawing it in Excalidraw first. When stuck: Excalidraw first, then a hint (their own words, Day 07). Let them, then review with a trace of a failing input.
-  - Solos and re-solves: they write the RESET comments themselves. When they ask "why", run their code on a tiny failing input and give the one fix.
-  - Ratings: ask right after each problem, on a line of its own.
+  - They watch the theory part of the video, then try the problem alone, drawing it in Excalidraw first. When stuck: Excalidraw first, then a hint.
+  - When they ask "why", run their code on a tiny failing input and give the one fix.
+  - On window problems, the question that unlocks them is "what does the window need to remember?"
+  - Ratings: ask right after each problem, on a line of its own. Asking for "three ratings" in one line worked on Day 08.
+  - The bonus is optional. On Day 08 they went blank on it late in the session. Offer **stop** before the bonus if the session has run long.
   - Go by their timer, never by message times. **stop** ends the session.
 - Watch for:
-  - counting and set problems (Day 07's sprint);
-  - a `Counter` built inside a loop;
-  - `best` starting from a single number instead of the first window;
-  - the return value in #26;
-  - pointers moved by hand inside a `for` (four times now);
-  - Big-O with two inputs (O(m + n)) and invented log n (no sort, no log n).
+  - the shrink loop (which number leaves, `l` moving on every turn);
+  - longest vs shortest (measure after vs before shrinking);
+  - containers (a set loses repeats; a sum or count is one number);
+  - `r - l + 1`;
+  - hidden loops (`sum()` or `Counter` inside a loop);
+  - Big-O space (what is actually stored).
   - Details in [[weak-spots]].
 - LeetCode language: Python3. For stdin practice, run locally in VS Code with `input()`.
-- Last updated: 2026-10-22, by Claude after Day 07.
+- Last updated: 2026-10-23, by Claude after Day 08.

@@ -9,6 +9,8 @@ tags: [card]
 > [!tip] Use when
 > The longest or shortest contiguous part that follows a rule. Solves #3.
 
+Video: [Longest Substring Without Repeating Characters - Leetcode 3 - Python (NeetCode)](https://www.youtube.com/watch?v=wiGpQwVHdE0)
+
 ## Card
 
 ```python

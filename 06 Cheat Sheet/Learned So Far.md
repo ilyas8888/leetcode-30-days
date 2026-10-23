@@ -4,7 +4,7 @@ tags: [review]
 ---
 
 > [!tip] Learned so far
-> Everything from Days 1–7 on one page. Read it before each warm-up. Claude adds to it after every session.
+> Everything from Days 1–8 on one page. Read it before each warm-up. Claude adds to it after every session.
 
 ## Patterns
 
@@ -20,11 +20,14 @@ tags: [review]
 | Running best | "Max profit", buy before you sell, the best result in one pass | `lowest = min(lowest, p)` then `best = max(best, p - lowest)` | [[Card 06 Running best and fixed windows]] |
 | Fixed window | "k items in a row", "every subarray of length k" | `window += nums[r] - nums[r - k]` | [[Card 06 Running best and fixed windows]] |
 | Reading input | HackerRank-style tests: no parameters, you read the input and print the answer | `nums = list(map(int, input().split()))` | [[Card 07 Reading input]] |
+| Variable window, longest | "The **longest** substring/subarray that…" (no repeats, at most k zeros) | grow; `while broken:` shrink; then `best = max(best, r - l + 1)` | [[Card 08 Variable window]] |
+| Variable window, shortest | "The **minimal** length… with sum ≥ target" | grow; `while valid:` `best = min(best, r - l + 1)`, then shrink | [[Card 08 Variable window]] |
 
 Videos:
 - Card 5: [Move Zeroes - Leetcode 283 - Python (NeetCode)](https://www.youtube.com/watch?v=aayNRwUN3Do)
 - Card 6: [Sliding Window: Best Time to Buy and Sell Stock - Leetcode 121 - Python (NeetCode)](https://www.youtube.com/watch?v=1pkOgXD63yU) and [Maximum Sum Subarray of Size K (CodeLucky)](https://www.youtube.com/watch?v=-cLczYQt48A)
 - Card 7: [Input a List using split() Method in Python (Neso Academy)](https://www.youtube.com/watch?v=paVL-trB1KA)
+- Card 8: [Longest Substring Without Repeating Characters - Leetcode 3 - Python (NeetCode)](https://www.youtube.com/watch?v=wiGpQwVHdE0)
 
 > [!warning] Four rules that prevent most bugs
 > 1. **Inside the brackets is the key; after `=` is the stored value.** `seen[x] = i` stores position `i` under the number `x`.
@@ -62,6 +65,9 @@ Videos:
 | `map(int, pieces)` + `list(...)` | every piece turned into a number, collected in a list | `list(map(int, ['3', '1']))` gives `[3, 1]` |
 | `sorted(ar)` / `ar.sort()` | a new sorted list / sorts `ar` itself | store it: `ar = sorted(ar)` |
 | `print(answer)` | the answer for the judge, who reads everything you print | no extra words, no `input("message")` |
+| `seen.remove(x)` | takes `x` out of a set (the opposite of `.add`) | `seen.remove(s[l])` |
+| `l = best = 0` | two names set to 0 at once | |
+| `r - l + 1` | the length of the window from `l` to `r`, both included | `l = 2, r = 4` gives 3 |
 
 Outside LeetCode, add `from collections import Counter, defaultdict` at the top.
 
@@ -86,6 +92,8 @@ Outside LeetCode, add `from collections import Counter, defaultdict` at the top.
 - Space is what you store: #49's dict stores every word, so O(n · k), even though words are made of only 26 letters.
 - No sort, no log n: #387 is two passes, so O(n).
 - A `Counter` built inside a loop is a full pass on every turn, so O(n²) (#389). Build it once, before the loop.
+- A `while` inside a `for` can still be O(n): in a variable window, each item enters once (`r`) and leaves at most once (`l`), so all the shrinking adds up to at most n.
+- A running total or a count is one number: O(1) space (#209, #1004). A set of the window's letters is O(min(n, m)) (#3).
 
 ## RESET
 
@@ -124,6 +132,7 @@ The slow solution: if each position has exactly one partner (its mirror, `len(s)
 | Running best (#121) | "Walk once, remember the cheapest so far, and ask every day what selling today would earn." |
 | Fixed window (#643) | "Add the new item, drop the one that fell out, and keep the best window you've seen." |
 | Reading input (card 7) | "Read everything, split it, turn the pieces into numbers, print only the answer." |
+| Variable window (#3, #209, #1004) | "Grow on the right; while it's broken, shrink from the left; then measure." (Shortest: while it's valid, measure, then shrink.) |
 
 ## Problems so far
 
@@ -147,6 +156,9 @@ The slow solution: if each position has exactly one partner (its mirror, `len(s)
 | [[0219 Contains Duplicate II]] | Hash map / window | Last position of each value within k, or a set of the last k numbers |
 | [Sales by Match (HackerRank)](https://www.hackerrank.com/challenges/sock-merchant/problem) | Reading input + counting | Count each color; each one gives `count // 2` pairs |
 | [#389 Find the Difference](https://leetcode.com/problems/find-the-difference/) | Counting | "Shuffled" plus one extra letter: the letter whose count in `t` is bigger |
+| [[0003 Longest Substring Without Repeating Characters]] | Variable window (longest) | A set of the window's letters; shrink while the new letter is already inside |
+| [[0209 Minimum Size Subarray Sum]] | Variable window (shortest) | A running total; while it's ≥ target, measure, then shrink |
+| [[1004 Max Consecutive Ones III]] | Variable window (longest) | Count the zeros inside; shrink while there are more than k |
 
 Live status, with Dataview on:
 
@@ -171,6 +183,7 @@ SORT next_review ASC
 - Counter keys are already unique: collect them in a list, which also keeps the order, not a set (#347).
 - `groups` and `defaultdict` don't belong in top k. That's #49's tool (#347).
 - Grouping needs no `if` and no seen set: `defaultdict(list)` makes the first box itself. Checking "seen before" loses the first word of every group (#49).
+- A set keeps one copy of each value. For a window's sum, keep a running total instead: a set of [2, 3, 1, 2] adds up to 6, not 8 (#209).
 - `most_common(k)` gives (number, count) pairs. Name the result with `=` (`pairs = …`, not `.append`), then unpack each pair on its own: `for num, times in pairs:`, with no `enumerate` (#347).
 
 **Lists and loops**
@@ -189,6 +202,9 @@ SORT next_review ASC
 - If you move the pointers yourself, use `while`. A `for` moves its own variable, so an `r += 1` inside it does nothing (#283, #121, #26, Sales by Match).
 - `return` goes after the loop. Inside it, it runs at the end of the first turn (Sales by Match).
 - `sorted(x)` returns a new list. Store it (`ar = sorted(ar)`), or the loop still reads the unsorted one.
+- In a window's shrink loop, look at the number **leaving** (`s[l]`, `nums[l]`), not the string's first letter (`s[0]`) or the number arriving (`x`). And move `l` on every turn, outside any `if`, or the loop never ends (#3, #1004).
+- Longest: measure **after** the shrink. Shortest: measure **inside** the `while`, before each shrink (#209, #1004).
+- A `while` that ends with `break` runs at most once: it's an `if` (#1004).
 - In a window, the number coming in is at `r` and the one leaving is at `r - k`. The loop starts at `r = k`, the first number not yet in the window (#643).
 - `window += …` carries over: each step starts from the last window, not from the first one.
 - Buy before you sell: the lowest and the highest price on their own can be in the wrong order ([2, 9, 1]). Use the cheapest price **up to** today (#121).
@@ -218,6 +234,7 @@ SORT next_review ASC
 - A running best starts from the first real value when results can be negative (#643's averages). 0 only works when the answer can't go below 0 (#121's profit). And it has to be the same kind of value: the first window's sum, not `nums[0]` (Day 7).
 - In a test, call `input()` with no message, print only the answer, and import `Counter` yourself outside LeetCode.
 - Think-aloud order: restate the problem, give an example, ask about edge cases, say the brute force, name the pattern, give your plan, code, trace your example, then the time and space. Phrases: [[Interview Phrases]].
+- Window problems: first ask "what does the window need to remember?" Which letters (a set), their total (one number), how many zeros (one number).
 - Before adding special-case `if`s, trace the failing input. On #643, the special cases were patching `best = 0.00`, and one of them was wrong.
 - "Null" from LeetCode can mean infinity leaked into the answer: `0 - float("inf")` (#121).
 - In-place problems can also ask for a number back, and LeetCode checks both: #26 wants the count **and** the unique numbers written into the first slots.

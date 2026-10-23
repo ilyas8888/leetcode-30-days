@@ -7,11 +7,11 @@ card: "[[Card 05 Read-write pointer]]"
 day: 5
 role: solo
 status: learning
-attempts: 3
-last_result: hints
-familiarity: 4
-last_attempt: 2026-10-22
-next_review: 2026-10-23
+attempts: 4
+last_result: alone
+familiarity: 5
+last_attempt: 2026-10-23
+next_review: 2026-10-26
 tags: [problem]
 ---
 
@@ -67,6 +67,7 @@ class Solution:
 - Expected to return nothing, because #283 and #344 don't. Read `->` in the signature: `-> int` means return a number, even when the list is also changed in place.
 - Day 6: a sharp trigger ("sorted, so a number bigger than the one before it is new"), and the count was right. But the code only counted and never wrote into `nums`, so on [1, 1, 2] the first two slots stayed 1, 1. LeetCode checks the k you return **and** the first k slots. Fix: `nums[count] = nums[i + 1]`.
 - Day 7: wrote the loop alone but ended with a bare `return` (None). After a guided hint ("what does `l` mean at the end?"), found `return l + 1` and the reason: positions start at 0. Also left an `r += 1` inside the `for`, which does nothing.
+- Day 8: alone, with no `r += 1`, and said it right: "`l` ends on the biggest number of the unique part; positions start at 0, so return `l + 1`."
 
 ## Attempts
 
@@ -75,3 +76,4 @@ class Solution:
 | 2026-10-20 | 5 | hints | — | 4 | Solo: hint 1, then own design in Excalidraw; return fixed to `w + 1` |
 | 2026-10-21 | 6 | hints | — | 4 | Re-solve: counted the new numbers but didn't write them; one line added |
 | 2026-10-22 | 7 | hints | — | 4 | Review day: the loop alone; the return value after a guided hint |
+| 2026-10-23 | 8 | alone | — | 5 | Re-solve: alone, return explained in their own words |
