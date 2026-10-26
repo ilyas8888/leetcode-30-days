@@ -1,6 +1,11 @@
 # STATUS
 
 - Current day: [[Day 08]] done on 2026-10-23. Next: [[Day 09]], stack (card 9): #20 guided, #155 solo, #150 bonus.
+- **Day 09 is in progress.** Started 2026-10-25, paused during the warm-up. Resume where it stopped:
+  - Card 8 (covers #3): fixed after hint 1. It removed the incoming `ch` instead of `s[l]`, and the remove must come before `l += 1`. It still used a list, and they were told to switch to `set()` / `.add`. Their #3 rating is still owed.
+  - Card 5 (covers #283): stopped at hint 1, the question about `while r != 0`. That line checks a position instead of `nums[r]`, and it's a `while` that never ends where the card has an `if`. Still to fix after that: `l += 1` comes before the swap, and the swap goes through `x` and `nums[l+1]` instead of `nums[w], nums[r] = nums[r], nums[w]`. Card 8's `while` + `l += 1` shape leaked into card 5.
+  - Not answered yet: the five titles (Majority Element, Remove Element, Longest Repeating Character Replacement, Squares of a Sorted Array, Intersection of Two Arrays).
+  - Then the rest of the Day 09 plan below.
 - Due re-solves:
   - 2026-10-24: #3, #209, #1004, #283, #347, #49 and #219.
   - Since 2026-10-20: #205 (unfinished bonus).
@@ -31,4 +36,4 @@
   - Big-O space (what is actually stored).
   - Details in [[weak-spots]].
 - LeetCode language: Python3. For stdin practice, run locally in VS Code with `input()`.
-- Last updated: 2026-10-23, by Claude after Day 08.
+- Last updated: 2026-10-26, by Claude (Day 09 paused during the warm-up).
