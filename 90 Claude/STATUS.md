@@ -1,39 +1,38 @@
 # STATUS
 
-- Current day: [[Day 08]] done on 2026-10-23. Next: [[Day 09]], stack (card 9): #20 guided, #155 solo, #150 bonus.
-- **Day 09 is in progress.** Started 2026-10-25, paused during the warm-up. Resume where it stopped:
-  - Card 8 (covers #3): fixed after hint 1. It removed the incoming `ch` instead of `s[l]`, and the remove must come before `l += 1`. It still used a list, and they were told to switch to `set()` / `.add`. Their #3 rating is still owed.
-  - Card 5 (covers #283): stopped at hint 1, the question about `while r != 0`. That line checks a position instead of `nums[r]`, and it's a `while` that never ends where the card has an `if`. Still to fix after that: `l += 1` comes before the swap, and the swap goes through `x` and `nums[l+1]` instead of `nums[w], nums[r] = nums[r], nums[w]`. Card 8's `while` + `l += 1` shape leaked into card 5.
-  - Not answered yet: the five titles (Majority Element, Remove Element, Longest Repeating Character Replacement, Squares of a Sorted Array, Intersection of Two Arrays).
-  - Then the rest of the Day 09 plan below.
-- Due re-solves:
-  - 2026-10-24: #3, #209, #1004, #283, #347, #49 and #219.
-  - Since 2026-10-20: #205 (unfinished bonus).
-  - 2026-10-25: #121.
-  - 2026-10-26: #26 and #643.
-  - Done: #217 (next look 2026-10-25); #1, #1480 and #242 (2026-10-27); #387 and #383 (2026-10-29); #125 and #344 (2026-10-30).
+- Current day: [[Day 09]] done on 2026-11-03 (sittings on 10-25, 10-29, 10-30 and 11-03). Next: [[Day 10]], binary search (card 10): #704 guided, #35 solo, #278 bonus.
+- Due re-solves. The gap days left a backlog: every learning problem except #155 is overdue.
+  - Needed hints or the solution on Day 9: #3, #283 and #209 (due 10-30); #1004 and #20 (due 10-31); #155 (due 11-04).
+  - Last solved alone: #347, #49 and #219 (due 10-24); #121 (10-25); #26 and #643 (10-26).
+  - Unfinished bonus: #205 (since 10-20).
+  - Done, 7-day look overdue: #217, #1, #1480, #242, #387, #383, #125 and #344. Fold them into the Day 14 review.
   - Mock interviews done: 0 of 4. The first is on Day 14.
-- Day 09 plan:
-  - Seven re-solves are due, so prioritize. Warm-up: card 8 from memory (covers #3) and card 5 (covers #283).
-  - Re-solves before the new card: #209 and #1004, the window variants that needed the most help.
-  - Card 9 with a video and a step visual, then #20 guided and #155 solo.
-  - If time is left: #347, #49 and #219, each solved alone last time. Then #205.
-- Pace: keep the current pace (their choice on 2026-10-18).
+- Day 10 plan:
+  - Warm-up: card 9 from memory (covers #20) and card 6 (covers #121 and #643's window), then 5 titles.
+  - Re-solves before the new card: #1004 (the most help on Day 9) and #26 (read/write pointer, overdue since 10-26).
+  - Card 10 with a video and a step visual, then #704 guided and #35 solo. #278 only if time is left.
+  - If time is left: #155, #209, #347, #49, #219, then #3, #283 and #205.
+  - Clear the backlog over the next sessions: 2–3 overdue re-solves before each new card, the ones that needed the most help first.
+- Pace: keep the current pace (their choice on 2026-10-18). A session can span several days: log each sitting's date in the running log and pick up exactly where it stopped.
 - How to run sessions:
   - New card: give a YouTube video (a real link, Python preferred) and a step visual (inline stepper). Both are in [[profile]].
-  - They watch the theory part of the video, then try the problem alone, drawing it in Excalidraw first. When stuck: Excalidraw first, then a hint.
+  - They watch the theory part of the video, then try the problem alone, drawing it in Excalidraw first. When stuck: Excalidraw first, then a hint. On Day 9 they watched the coding part too and wrote #20 alongside it: that counts as "solution".
   - When they ask "why", run their code on a tiny failing input and give the one fix.
   - On window problems, the question that unlocks them is "what does the window need to remember?"
+  - Ask with concrete values and lists, not abstract questions. On Day 9, "what does that column behave like?" didn't land; the table with the two real lists did.
+  - When fixes pile up and they get confused, show the whole solution at once with a visual, then have them type it from memory. #155 was correct from memory four days later.
+  - Design problems (a class): explain `__init__` and `self` as format help first. It isn't a hint.
   - Ratings: ask right after each problem, on a line of its own. Asking for "three ratings" in one line worked on Day 08.
-  - The bonus is optional. On Day 08 they went blank on it late in the session. Offer **stop** before the bonus if the session has run long.
+  - The bonus is optional. Offer **stop** before the bonus if the session has run long. If they skip the close sentences, log what they gave and move on.
   - Go by their timer, never by message times. **stop** ends the session.
 - Watch for:
-  - the shrink loop (which number leaves, `l` moving on every turn);
-  - longest vs shortest (measure after vs before shrinking);
-  - containers (a set loses repeats; a sum or count is one number);
-  - `r - l + 1`;
-  - hidden loops (`sum()` or `Counter` inside a loop);
-  - Big-O space (what is actually stored).
+  - card 8's `while` + `l += 1` leaking into card 5 (Day 9);
+  - the window shrink: which number leaves, `l` walking one step, `count > k` rather than `>=`;
+  - longest vs shortest (measure after the shrink vs inside the `while`);
+  - hidden loops (`sum()`, `min()` or `Counter` inside a loop or a method);
+  - Big-O space (what is actually stored; a stack is O(n));
+  - changing lines that already work while fixing another one;
+  - guarding `[-1]` with the right list.
   - Details in [[weak-spots]].
 - LeetCode language: Python3. For stdin practice, run locally in VS Code with `input()`.
-- Last updated: 2026-10-26, by Claude (Day 09 paused during the warm-up).
+- Last updated: 2026-11-03, by Claude after Day 09.

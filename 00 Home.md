@@ -4,7 +4,7 @@ tags: [home]
 ---
 
 > [!todo] Next session
-> [[Day 09]] · Stack (card 9) · warm-up: cards 8 and 5 from memory · re-solve first: [[0209 Minimum Size Subarray Sum]], [[1004 Max Consecutive Ones III]]. Claude updates this line after each session.
+> [[Day 10]] · Binary search (card 10) · warm-up: cards 9 and 6 from memory · re-solve first: [[1004 Max Consecutive Ones III]], [[0026 Remove Duplicates from Sorted Array]]. Claude updates this line after each session.
 
 ```dataview
 TABLE focus, kind

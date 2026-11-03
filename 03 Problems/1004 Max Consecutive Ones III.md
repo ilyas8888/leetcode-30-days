@@ -7,11 +7,11 @@ card: "[[Card 08 Variable window]]"
 day: 8
 role: bonus
 status: learning
-attempts: 1
-last_result: solution
-familiarity: 3
-last_attempt: 2026-10-23
-next_review: 2026-10-24
+attempts: 2
+last_result: hints
+familiarity: 4
+last_attempt: 2026-10-30
+next_review: 2026-10-31
 tags: [problem]
 ---
 
@@ -36,14 +36,13 @@ tags: [problem]
 ```python
 class Solution:
     def longestOnes(self, nums: list[int], k: int) -> int:
-        l = best = 0
-        zeroes = 0
+        l = count = best = 0
         for r, x in enumerate(nums):
             if x == 0:
-                zeroes += 1
-            while zeroes > k:
+                count += 1
+            while count > k:
                 if nums[l] == 0:
-                    zeroes -= 1
+                    count -= 1
                 l += 1
             best = max(best, r - l + 1)
         return best
@@ -63,9 +62,15 @@ class Solution:
   - `r - l - 1` instead of `r - l + 1`;
   - measuring before the shrink.
 - Last try looped forever: the shrink checked `x`, the number coming **in**, and moved `l` only inside the `if`. When the number was a 1, nothing changed. Every turn of a `while` must move something.
+- Day 9 re-solve, in order:
+  - the shrink ran before the new zero was counted, so a broken window got measured (`[0, 0]`, `k = 1` gave 2);
+  - the "flip" was written into `nums` (`nums[r] = 1`), which erases where the zeros are. The flip only happens in your head: `count` is the flip;
+  - the shrink jumped (`l = r`, then `l = r - 1`). No formula works: where `l` stops depends on where the oldest zero is. It walks: check `nums[l]`, then `l += 1`;
+  - `while count >= k` with `l += 1` before the check: two off-by-ones that cancel on example 1 (6) but not on example 2 (7 instead of 10). Broken means **more** than k.
 
 ## Attempts
 
 | Date | Day | Result | Minutes | Familiar (1–5) | Note |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-23 | 8 | solution | — | 3 | Bonus: hints 1–3, then the full solution explained with a step visual; retyped it |
+| 2026-10-30 | 9 | hints | — | 4 | Re-solve (started 10-29): order, then no flipping in `nums`, then the walking shrink, then `count > k`; Big-O right |

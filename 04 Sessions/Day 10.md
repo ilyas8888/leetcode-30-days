@@ -18,7 +18,10 @@ tags: [session]
 - Guided: [[0704 Binary Search]]
 - Solo: [[0035 Search Insert Position]]
 - Bonus: [[0278 First Bad Version]]
-- Re-solve: [[0020 Valid Parentheses]], [[0209 Minimum Size Subarray Sum]]
+- Re-solve:
+  - In the warm-up: card 9 from memory covers [[0020 Valid Parentheses]], and card 6 covers [[0121 Best Time to Buy and Sell Stock]] and the window in [[0643 Maximum Average Subarray I]].
+  - First, before the new card: [[1004 Max Consecutive Ones III]] and [[0026 Remove Duplicates from Sorted Array]].
+  - If time is left: [[0155 Min Stack]], [[0209 Minimum Size Subarray Sum]], [[0347 Top K Frequent Elements]], [[0049 Group Anagrams]], [[0219 Contains Duplicate II]].
 
 ## Routine
 

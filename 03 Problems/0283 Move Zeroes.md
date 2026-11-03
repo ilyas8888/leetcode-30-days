@@ -7,11 +7,11 @@ card: "[[Card 05 Read-write pointer]]"
 day: 5
 role: guided
 status: learning
-attempts: 2
-last_result: alone
-familiarity: 5
-last_attempt: 2026-10-21
-next_review: 2026-10-24
+attempts: 3
+last_result: hints
+familiarity: 4
+last_attempt: 2026-10-29
+next_review: 2026-10-30
 tags: [problem]
 ---
 
@@ -52,6 +52,8 @@ class Solution:
 - When both numbers were non-zero, only `w` moved, so on `[1, 2, 3]` it passed `r` and ran off the end (IndexError).
 - Fix: the card's shape. `for r in range(len(nums))` moves `r` every turn by itself, and `w` moves only when you keep a number, so `w` never passes `r`.
 - The retyped version kept `else: r += 1`. In a `for` loop that does nothing: the loop sets `r` again at the next turn.
+- Day 9 (card 5 from memory, right after card 8): the window's shape leaked in. `while r != 0` checked the position `r` instead of `nums[r]`, and as a `while` it never stopped; `l += 1` came before the swap, and the swap went through the loop variable `x` and `nums[l+1]`. IndexError on `[0, 1, 0, 3, 12]`. After hint 1, rewrote it correctly.
+- Keep the two shapes apart: the read/write pointer decides once per number with an `if` and moves `w`; the variable window shrinks with a `while` and moves `l`. Naming the pointer `w` helps.
 
 ## Attempts
 
@@ -59,3 +61,4 @@ class Solution:
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-20 | 5 | hints | — | 4 | Tried alone with a drawing first; time limit, then the card's version |
 | 2026-10-21 | 6 | alone | — | 5 | Warm-up: card 5 from memory, drawn in Excalidraw first |
+| 2026-10-29 | 9 | hints | — | 4 | Warm-up: card 5 from memory (started 10-25); hint 1 on `while r != 0`; correct on 10-29 |

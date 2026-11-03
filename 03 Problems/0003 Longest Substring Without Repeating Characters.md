@@ -7,11 +7,11 @@ card: "[[Card 08 Variable window]]"
 day: 8
 role: guided
 status: learning
-attempts: 1
+attempts: 2
 last_result: hints
 familiarity: 4
-last_attempt: 2026-10-23
-next_review: 2026-10-24
+last_attempt: 2026-10-29
+next_review: 2026-10-30
 tags: [problem]
 ---
 
@@ -58,9 +58,12 @@ class Solution:
 - Forgot `seen.add(ch)`: the set stayed empty, so the window never shrank and "abcabcbb" returned 8.
 - Wrote `seen.remove(s[0])`, the string's first letter, instead of `s[l]`, the window's first letter. That gives `KeyError: 'a'`.
 - Big-O reasoning: "the while runs only once" isn't the reason; each letter leaves the window at most once overall.
+- Day 9 (card 8 from memory): `seen.remove(ch)` took out the earlier copy of the incoming letter instead of `s[l]`, the letter at the left edge, and `l += 1` came before the remove. `"abbc"` returned 3 instead of 2. Fixed after hint 1: remove `s[l]`, then move `l`.
+- Day 9: used a list for `seen`. It works, but `ch in seen` on a list checks the items one by one; a set answers in one step.
 
 ## Attempts
 
 | Date | Day | Result | Minutes | Familiar (1–5) | Note |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-23 | 8 | hints | — | 4 | Guided: built from the video's theory and a drawing; hint 1 found the missing add and `s[l]`; card typed from memory after |
+| 2026-10-29 | 9 | hints | — | 4 | Warm-up: card 8 from memory (started 10-25); hint 1 with a trace of `"abbc"`; then list → set |

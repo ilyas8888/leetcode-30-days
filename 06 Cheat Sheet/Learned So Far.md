@@ -4,7 +4,7 @@ tags: [review]
 ---
 
 > [!tip] Learned so far
-> Everything from Days 1–8 on one page. Read it before each warm-up. Claude adds to it after every session.
+> Everything from Days 1–9 on one page. Read it before each warm-up. Claude adds to it after every session.
 
 ## Patterns
 
@@ -22,12 +22,15 @@ tags: [review]
 | Reading input | HackerRank-style tests: no parameters, you read the input and print the answer | `nums = list(map(int, input().split()))` | [[Card 07 Reading input]] |
 | Variable window, longest | "The **longest** substring/subarray that…" (no repeats, at most k zeros) | grow; `while broken:` shrink; then `best = max(best, r - l + 1)` | [[Card 08 Variable window]] |
 | Variable window, shortest | "The **minimal** length… with sum ≥ target" | grow; `while valid:` `best = min(best, r - l + 1)`, then shrink | [[Card 08 Variable window]] |
+| Stack | Matching pairs, nesting, "the most recent one first" (brackets) | `if stack and stack[-1] == pairs[c]: stack.pop()` | [[Card 09 Stack]] |
+| Min stack (design) | "Design a stack" + get the minimum in constant time | `self.mins.append(min(value, self.mins[-1]))` | [[Card 09 Stack]] |
 
 Videos:
 - Card 5: [Move Zeroes - Leetcode 283 - Python (NeetCode)](https://www.youtube.com/watch?v=aayNRwUN3Do)
 - Card 6: [Sliding Window: Best Time to Buy and Sell Stock - Leetcode 121 - Python (NeetCode)](https://www.youtube.com/watch?v=1pkOgXD63yU) and [Maximum Sum Subarray of Size K (CodeLucky)](https://www.youtube.com/watch?v=-cLczYQt48A)
 - Card 7: [Input a List using split() Method in Python (Neso Academy)](https://www.youtube.com/watch?v=paVL-trB1KA)
 - Card 8: [Longest Substring Without Repeating Characters - Leetcode 3 - Python (NeetCode)](https://www.youtube.com/watch?v=wiGpQwVHdE0)
+- Card 9: [Valid Parentheses - Stack - Leetcode 20 - Python (NeetCode)](https://www.youtube.com/watch?v=WTzjTskDFMg)
 
 > [!warning] Four rules that prevent most bugs
 > 1. **Inside the brackets is the key; after `=` is the stored value.** `seen[x] = i` stores position `i` under the number `x`.
@@ -68,6 +71,11 @@ Videos:
 | `seen.remove(x)` | takes `x` out of a set (the opposite of `.add`) | `seen.remove(s[l])` |
 | `l = best = 0` | two names set to 0 at once | |
 | `r - l + 1` | the length of the window from `l` to `r`, both included | `l = 2, r = 4` gives 3 |
+| `stack.append(x)` / `stack.pop()` / `stack[-1]` | push on top / take the top off / look at the top | a plain list used as a stack |
+| `return not stack` | True when the stack is empty | `not []` gives True |
+| `if stack and stack[-1] == x:` | the `and` stops before `stack[-1]` when the stack is empty | no IndexError |
+| `lst.remove(x)` | removes the **first** copy of the value `x` | to take the last item off, use `lst.pop()` |
+| `class` + `__init__(self)` + `self.name` | data kept on the object, reachable from every method | `self.stack = []` in `__init__` |
 
 Outside LeetCode, add `from collections import Counter, defaultdict` at the top.
 
@@ -94,6 +102,8 @@ Outside LeetCode, add `from collections import Counter, defaultdict` at the top.
 - A `Counter` built inside a loop is a full pass on every turn, so O(n²) (#389). Build it once, before the loop.
 - A `while` inside a `for` can still be O(n): in a variable window, each item enters once (`r`) and leaves at most once (`l`), so all the shrinking adds up to at most n.
 - A running total or a count is one number: O(1) space (#209, #1004). A set of the window's letters is O(min(n, m)) (#3).
+- `sum()`, `min()` or `Counter` of a list inside a loop or a method is a hidden O(n). #209 with `sum(array)` in the `while` hit Time Limit Exceeded (about 6 billion additions for 100,000 numbers); #155's `min(self.stack)` broke the O(1) rule.
+- A stack can end up holding every item: O(n) space (#20's `"(((((("`, #155's two lists).
 
 ## RESET
 
@@ -133,6 +143,8 @@ The slow solution: if each position has exactly one partner (its mirror, `len(s)
 | Fixed window (#643) | "Add the new item, drop the one that fell out, and keep the best window you've seen." |
 | Reading input (card 7) | "Read everything, split it, turn the pieces into numbers, print only the answer." |
 | Variable window (#3, #209, #1004) | "Grow on the right; while it's broken, shrink from the left; then measure." (Shortest: while it's valid, measure, then shrink.) |
+| Stack (#20) | "Push every opener; each closer must match the top, which I pop; at the end nothing may be left open." |
+| Min stack (#155) | "Keep a second stack with the min at every level: push adds one, pop removes one, getMin reads its top." |
 
 ## Problems so far
 
@@ -159,6 +171,8 @@ The slow solution: if each position has exactly one partner (its mirror, `len(s)
 | [[0003 Longest Substring Without Repeating Characters]] | Variable window (longest) | A set of the window's letters; shrink while the new letter is already inside |
 | [[0209 Minimum Size Subarray Sum]] | Variable window (shortest) | A running total; while it's ≥ target, measure, then shrink |
 | [[1004 Max Consecutive Ones III]] | Variable window (longest) | Count the zeros inside; shrink while there are more than k |
+| [[0020 Valid Parentheses]] | Stack | Push openers; a closer must match the top (pop it); the stack must end empty |
+| [[0155 Min Stack]] | Stack (design) | A second stack holds the min at each level, so every method is O(1) |
 
 Live status, with Dataview on:
 
@@ -205,9 +219,19 @@ SORT next_review ASC
 - In a window's shrink loop, look at the number **leaving** (`s[l]`, `nums[l]`), not the string's first letter (`s[0]`) or the number arriving (`x`). And move `l` on every turn, outside any `if`, or the loop never ends (#3, #1004).
 - Longest: measure **after** the shrink. Shortest: measure **inside** the `while`, before each shrink (#209, #1004).
 - A `while` that ends with `break` runs at most once: it's an `if` (#1004).
+- The shrink walks one step at a time. A jump like `l = r` or `l = r - 1` can't know where the oldest zero is (#1004).
+- Check the number leaving, then move: `if nums[l] == 0: count -= 1`, then `l += 1`. Moving first checks a number that's still inside (#1004).
+- "At most k" means the window is broken only with **more** than k: `while count > k` (#1004).
+- A "flip" is only counted, never written into `nums`: writing it erases where the zeros are (#1004).
+- Right after typing the window card, its `while` + `l += 1` can leak into the read/write pointer. That one is an `if` per number and a pointer `w` (#283, Day 9).
 - In a window, the number coming in is at `r` and the one leaving is at `r - k`. The loop starts at `r = k`, the first number not yet in the window (#643).
 - `window += …` carries over: each step starts from the last window, not from the first one.
 - Buy before you sell: the lowest and the highest price on their own can be in the wrong order ([2, 9, 1]). Use the cheapest price **up to** today (#121).
+
+**Stacks and classes**
+- `lst.remove(lst[-1])` removes the first copy of that value, not the top: push 1, 2, 1, then pop gave `[2, 1]`. Use `lst.pop()` (#155).
+- Guard `[-1]` with the list it reads: `if self.mins:` before `self.mins[-1]`. Copying #20's guard as `self.stack[-1] == self.mins` compared a number with a list, which is always False (#155).
+- When fixing one line, leave the lines that already work alone. In #155, `getMin` and `self.stack.append` got changed and broke.
 
 **Code style**
 - `def f(string = str)` sets a default value. A type hint uses a colon: `def f(string: str)`.
@@ -238,3 +262,6 @@ SORT next_review ASC
 - Before adding special-case `if`s, trace the failing input. On #643, the special cases were patching `best = 0.00`, and one of them was wrong.
 - "Null" from LeetCode can mean infinity leaked into the answer: `0 - float("inf")` (#121).
 - In-place problems can also ask for a number back, and LeetCode checks both: #26 wants the count **and** the unique numbers written into the first slots.
+- "Each one only once" → a set; "how many" → a Counter (Intersection of Two Arrays vs its II version).
+- Sorted with negative numbers, with the answer built from the extremes → two pointers from both ends: the biggest absolute values sit at the ends (Squares of a Sorted Array).
+- Design problems: `__init__` creates what you keep on `self`, and each method reads it through `self`.
